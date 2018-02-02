@@ -1,0 +1,104 @@
+
+<html>
+<head>	
+
+<meta charset="UTF-8"/>	
+
+<title>Hinesh Bulsara</title>	
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="initial-scale=1.0">
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta charset="utf-8">
+<script type="text/javascript" src="jscript.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<!--<script src="//code.angularjs.org/snapshot/angular-animate.js"></script>-->
+<!--<script src="jscript.js"></script>-->
+</head>
+<body onload="onload()" ng-app="app" ng-controller="infoCtrl">
+
+<header id="header">
+	
+	<h1> Hinesh Bulsara </h1>
+	<h4 class="headerh4">
+	Phone: 647-740-6994 <br>
+	Email: hineshb@live.ca
+	</h4>
+
+</header>
+
+<div class="tab">
+	<button class="tablinks" onclick="openTab(event, 'Me')" id="defaultOpen">About Me</button>
+	<button class="tablinks" onclick="openTab(event, 'Resume')">Resume</button>
+	<button class="tablinks" onclick="openTab(event, 'Projects')">Projects</button>
+</div>
+<!-- About me tab -->
+<div id="Me" class="tabcontent">
+	<h2>A little about me...</h2>
+	<p>I have graduated from Ryerson University with my Bachelors of Science degree in Computer Science. 
+	The courses that I enrolled in while attending Ryerson University are related to technology 
+	and computer programming, and have prepared me well to make a significant contribution in 
+	my future employment opportunities.</p>
+	<p>I am experienced with several programming languages including Java, HTML, CSS, Javascript, and more. 
+	I am looking to improve and gain valuable skills and experience to help me grow even further.</p>
+	<p>In my spare time I like spending time with my friends, playing video and board games, and helping out around the house </p>
+	
+	<!--<div style="text-align: center;"><img src="hinesh.jpg" alt="Hinesh B"></div>-->
+	<!--<section id="sec1">
+	<figure>
+		<img id="resize" src="hinesh.jpg" alt="Hinesh B" align="center">	
+	</figure>
+	</section>-->
+	<div style="text-align: center;"><img src="hinesh.jpg" class="img-fluid" alt="Hinesh B"></div>
+</div>
+<!-- Resume external html -->
+<div id="Resume" class="tabcontent"><div ng-include="'resume.html'"></div></div>
+
+<!-- Projects -->
+<div id="Projects" class="tabcontent"><h2>Coming soon...</h2></div>
+
+<script>
+var app = angular.module('app', []); 
+app.controller('infoCtrl', function($scope, $http) {
+	//$scope.list = [{task:'Clean House', done:false, description:"Clean"}];
+	//$scope.completelist = [];
+	$scope.list = [];
+	$http.get('info.json').success(function (data) {
+		for (i=0;i< data.info.length;i++){
+			if(data.info[i].description
+			){
+			$scope.list.push({title:data.info[i].title, done:data.info[i].done, description:data.info[i].description});
+			}else{
+			$scope.list.push({title:data.info[i].title, done:data.info[i].done, description:"None."});
+			}
+			
+		}
+	})
+});  
+
+//Read html in json
+app.filter('to_trusted', ['$sce', function($sce){
+    return function(text) {
+        return $sce.trustAsHtml(text);
+    };
+}]);
+
+//$scope.highlight = function(text) {
+//    return $sce.trustAsHtml('<span class="highlightedText">' + text + '</span>'));
+//};
+
+//Highlight search
+app.filter('highlight', function($sce) {
+  return function(text, phrase) {
+    if (phrase){
+		text = text.replace(new RegExp('(' + phrase + ')', 'gi'),'<span class="highlightedText">$1</span>');
+	}
+    return $sce.trustAsHtml(text);
+  }
+});
+    
+</script>
+
+</body>
+
+</html>
