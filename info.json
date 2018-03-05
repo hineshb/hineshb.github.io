@@ -1,0 +1,48 @@
+{
+"info":[
+    {
+	"title":"Skills & Abilities:",
+	"done":"false",
+	"description":"<ol>Excellent leadership qualities and strong financial skills developed through student <div> leadership, volunteer experiences, and work </div></ol><ol>Strong verbal/written communication and interpersonal skills built through customer-employee <div> relationships in a fast paced work environment</div></ol> <ol>Five years experience in serving customers in a timely manner</ol>"
+	},
+	{
+	"title":"Technical Knowledge:",
+	"done":"false",
+	"description":"<ol>Exceptional with MS Office (Word, Excel, PowerPoint, Publisher, Outlook)</ol><ol>Knowledge of and experienced with C, Java, HTML, JAVASCRIPT, MATLAB and VB.Net <div>developed through self study and school courses</div></ol>"
+	},
+	{
+	"title":"Work Experience:",
+	"done":"false",
+	"description":"<strong><ol>Storefront/Baker – Tim Hortons</strong><div><i>March 2012 – Present</i></div><div>• Preparing food orders and working efficiently as a team</div><div>• Efficiently handling cash and other forms of payments</div><div>• Cleanup and Setup of Tim Horton’s merchandise </div><div>• Supervising staff and maintaining service </div></ol>"
+	},
+	{
+	"title":"Education:",
+	"done":false,
+	"description":"<ol><strong>Ryerson University – Computer Science</strong><div>Bachelors of Science – Graduated 2016</div></ol><strong><ol>West Humber Collegiate Institute</strong><div>O.S.S.D. (Ontario Secondary School Diploma) 2012 </div></ol>"
+	},
+	{
+	"title":"Academic Projects:",
+	"done":false,
+	"description":"<ol><strong>MATLAB</strong><div>Image Stitching: combined multiple images with overlapping fields of view to produce a </div><div>segmented panorama</div></div></ol><ol><strong>HTML / CSS / JavaScript / AngularJS</strong><div>To-do List: Lets a user create a list of things to-do, can be arranged to a completed list and may</div><div>remove from the list</div><div>Reverse Geolocating: Used API and location coordinates to find the location along with its</div><div>distance from current location</div><div>Weather Application: Finds 5 days and hourly weather at the location declared by user</div></div></ol><ol><strong>VB.Net</strong><div>Alarm Clock: Allows user to create an alarm that will ring to the selected tune of their choice at </div><div>the time set</div></ol><ol><strong>C with OpenGL</strong><div>Interactive Interior Design Program: 3D environment created that allowed first or third person</div><div>view for the character created, along with objects/obstacles</div></ol>"
+	},
+	{
+	"title":"Leadership & Volunteer:",
+	"done":"false",
+	"description":"<ol><strong>GSA (Gay and Straight Alliance)</strong><div><i>September 2011 – June 2012</i></div><div>• Organized and implemented event and workshops to create awareness</div><div>• Coordinated with peers to show the importance and diversity of various sexual orientations</div></ol><ol><strong>Parent-Teacher Night</strong><div><i>September 2009 – August 2012</i></div><div>• Coordinated parents around the school</div><div>• Setup and Organized different locations within the school for teachers</div><div>• Worked efficiently with peers to make the best possible experience</div></ol><ol><strong>Student Leadership Workshops</strong><div><i>October 2009</i></div><div>• Acted as a mentor, guide, and leader</div><div>• Got involved in planning, commencing, and showing leadership skills through various </div><div>activities</div></ol><ol><strong>Gardener - PACT Urban Peace Program</strong><div><i>May 2009 – August 2009</i></div><div>• Organizing schedules and routines daily</div><div>• Structured and implemented a fruit-vegetable program at West Humber C.I.</div>"
+	},
+	{
+	"title":"Awards:",
+	"done":"false",
+	"description":"<ol><strong>Honors Award</strong><div><i>2009-2012</i></div><div>Toronto District School Board, Toronto, ON</div></ol><ol><strong>Leadership Award</strong><div><i>2009-2012</i></div><div>Toronto District School Board, Toronto, ON</div></ol>"
+	},
+	{
+	"title":"Activities & Interest:",
+	"done":"false",
+	"description":"<ol><strong>Sports</strong><div>• Badminton</div><div>• Ultimate Frisbee</div><div>• Cricket</div></ol>"
+	},
+	{
+	"title":"References:",
+	"done":"false",
+	"description":"<ol><strong>Available upon request</strong></ol>"
+	}
+]}

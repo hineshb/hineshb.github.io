@@ -1,0 +1,43 @@
+{
+"info":[
+    {
+	"title":"Skills & Abilities:",
+	"done":"false",
+	"description":"Strong verbal/written communication and interpersonal/leadership skills built through customer-employee relationships in a fast paced work environment <br><br> Five years experience in serving customers in a timely manner<br><br>"
+	},
+	{
+	"title":"Education:",
+	"done":false,
+	"description":"<strong>Ryerson University – Computer Science</strong><br>Bachelors of Science – Graduated 2016 <br><br> <strong>West Humber Collegiate Institute</strong><br>O.S.S.D. (Ontario Secondary School Diploma) 2012 <br><br>"
+	},
+	{
+	"title":"Technical Knowledge:",
+	"done":"false",
+	"description":"Exceptional with Adobe Photoshop and MS Office (Word, Excel, PowerPoint, Publisher, Outlook, Windows/Linux)<br><br>Knowledge of and experienced with C, Java, HTML, JAVASCRIPT, MATLAB and VB.Net developed through self study and school courses<br><br>"
+	},
+	{
+	"title":"Academic Projects:",
+	"done":false,
+	"description":"<strong>MATLAB</strong><br><i><b>Image Stitching:</b></i> combined multiple images with overlapping fields of view to produce a segmented panorama<br><br><strong>HTML / CSS / JavaScript / AngularJS</strong><br><i><b>To-do List:</b></i> Lets a user create a list of things to-do, can be arranged to a completed list and may remove from the list<br><i><b>Reverse Geolocating:</b></i> Used API and location coordinates to find the location along with it’s distance from current location<br><i><b>Weather Application: </b></i>Finds 5 days and hourly weather at the location declared by user<br><br><strong>VB.Net</strong><br><i><b>Alarm Clock:</b></i> Allows user to create an alarm that will ring to the selected tune of their choice at the time set<br><br><strong>C with OpenGL</strong><br><i><b>Interactive Interior Design Program: </b></i>3D environment created that allowed first or third person view for the character created, along with objects/obstacles<br><br><strong>Java with Android Studio</strong><br><i><b>Android application Development:  </b></i>Personal project where I developed an application that allowed a tailor to store client information with pictures and pricing. Creates a list with the data and notification setting for when the client's work is due.<br><br>"
+	},
+	{
+	"title":"Work Experience:",
+	"done":"false",
+	"description":"<strong>Storefront/Baker – Tim Hortons</strong><br><b>March 2012 – Present</b><br>• Preparing food orders and working efficiently as a team<br>• Efficiently handling cash and other forms of payments<br>• Supervising staff and Cleanup and Setup of Tim Horton’s merchandise<br><br>"
+	},
+	{
+	"title":"Leadership & Volunteer:",
+	"done":"false",
+	"description":"<strong>GSA (Gay and Straight Alliance)</strong><br><i>September 2011 – June 2012</i><br>• Organized and implemented event and workshops to create awareness<br>• Coordinated with peers to show the importance and diversity of various sexual orientations<br><br><strong>Parent-Teacher Night</strong><br><i>September 2009 – August 2012</i><br>• Coordinated parents around the school<br>• Setup and Organized different locations within the school for teachers<br>• Worked efficiently with peers to make the best possible experience<br><br><strong>Student Leadership Workshops</strong><br><i>October 2009</i><br>• Acted as a mentor, guide, and leader<br>• Got involved in planning, commencing, and showing leadership skills through various activities<br><br><strong>Gardener - PACT Urban Peace Program</strong><br><i>May 2009 – August 2009</i><br>• Organizing schedules and routines daily<br>• Structured and implemented a fruit-vegetable program at West Humber C.I.<br>• Cared for and maintained plants by watering, weeding and resoiling<br><br>"
+	},
+	{
+	"title":"Awards:",
+	"done":"false",
+	"description":"<strong>Honors Award</strong><br><i>2009-2012</i><br>Toronto District School Board, Toronto, ON<br><br><strong>Leadership Award</strong><br><i>2009-2012</i><br>Toronto District School Board, Toronto, ON<br><br>"
+	},
+	{
+	"title":"References:",
+	"done":"false",
+	"description":"<strong>Available upon request</strong>"
+	}
+]}

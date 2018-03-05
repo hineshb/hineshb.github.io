@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+<!--<h2>Resume</h2>-->
+
+<!--<p ng-repeat="info in list">
+	<span ng-bind="info.title"></span><br>
+	<span>Description: </span><span ng-bind="info.description"></span>
+</p> -->
+<!-- Search bar -->
+<div>Filter:<input type="search"  placeholder="search..." ng-model="search"></div>
+<br>
+<!-- Print+Filter Resume -->
+<div class="animate-container">
+    <span ng-repeat="info in list | filter: search">
+		<h3 ng-bind-html="info.title | highlight:search"></h3>
+		<div ng-bind-html="info.description | highlight:search"></div>
+	</span>
+    <span class="animate-repeat" ng-if="results.length === 0">
+		<h4>No results found...</h4>
+    </span>
+</div>
+</body>
+</html>

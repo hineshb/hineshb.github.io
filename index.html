@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hinesh Bulsara</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/grayscale.css" rel="stylesheet">
+	<link href="css/slide.css" rel="stylesheet">
+	<script type="text/javascript" src="jscript.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+  </head>
+
+  <body id="page-top" onload="onload()" ng-app="app" ng-controller="infoCtrl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Hinesh Bulsara</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#resume">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#project">Projects</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="masthead">
+      <div class="intro-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h1 class="brand-heading">Hinesh Bulsara</h1>
+              <p class="intro-text">Bachelor of Science in Computer Science
+                <br>Ryerson University</p>
+              <a href="#about" class="btn btn-circle js-scroll-trigger">
+                <i class="fa fa-angle-double-down animated"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>A little about me...</h2>
+            <p>I have graduated from Ryerson University with my Bachelors of Science degree in Computer Science. 
+				The courses that I enrolled in while attending Ryerson University are related to technology 
+				and computer programming, and have prepared me well to make a significant contribution in 
+				my future employment opportunities.</p>
+            <p>I am experienced with several programming languages including Java, HTML, CSS, Javascript, and more. 
+				I am looking to improve and gain valuable skills and experience to help me grow even further.</p>
+            <p>In my spare time I like spending time with my friends, playing video and board games, and helping out around the house.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="gray-section content-section text-center">
+      <div class="container">
+        <div class="col-lg-8 mx-auto">
+          <!--<h2>Resume</h2>-->
+		  <!--<div id="hideresume" style="display:block;">-->
+			<ul class="list-inline banner-social-buttons">
+				<li class="list-inline-item">
+					<a href="" onclick="hideresume();" class="btn btn-default2 btn-lg">
+						<div style="font-size:30px"><span class="network-name">Resume</span></div>
+					</a>
+				</li>
+			</ul>
+		<!--</div>-->
+			<div id="hideresume" style="display:none;">
+				<div id="Resume" class="tabcontent"><div ng-include="'resume.html'"></div></div>
+			</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="project" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto">
+            <h2>Projects</h2>
+            <p>Feel free to checkout some of my projects</p>
+			<ul class="list-inline banner-social-buttons">
+              <li class="list-inline-item">
+                <a href="#projectscroll" onclick="showproject1();" class="btn btn-default btn-lg js-scroll-trigger">
+                  <span class="network-name">Alarm Clock</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#projectscroll" onclick="showproject2();" class="btn btn-default btn-lg js-scroll-trigger">
+                  <span class="network-name">Image Stitching</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#projectscroll" onclick="showproject3();" class="btn btn-default btn-lg js-scroll-trigger">
+                  <span class="network-name">Interactive World</span>
+                </a>
+              </li>
+			  <li class="list-inline-item">
+                <a href="project/weatherapp/index.html" target="_blank" onclick="showproject4();" class="btn btn-default btn-lg js-scroll-trigger">
+                  <span class="network-name">Weather App</span>
+                </a>
+              </li>
+			  <li class="list-inline-item">
+                <a href="#projectscroll" onclick="showproject5();" class="btn btn-default btn-lg js-scroll-trigger">
+                  <span class="network-name">SD Designs</span>
+                </a>
+              </li>
+            </ul>
+			<br>
+			<br id="projectscroll">
+            <div id="project1" style="display:none;">
+			<div id="proj1width" class="col-lg-7 mx-auto"><!--style="width:405px;"-->
+				<p>Alarm Clock</p>
+				<span id="swipelbl"><span style="color:#ff003c"><<</span><span> Swipe </span><span style="color:#ff003c">>></span></span>
+				<div class=swipe>
+					<img id="pro1" src="project/alarmclock/alarm1.PNG" alt="alrmclk">
+					<!--<img src="project/alarmclock/alarm2.png">-->
+					<img id="pro1" src="project/alarmclock/alarm3.PNG" alt="alrmclk">
+					<img id="pro1" src="project/alarmclock/alarm4.PNG" alt="alrmclk">
+					<img id="pro1" src="project/alarmclock/alarm5.PNG" alt="alrmclk">
+					<img id="pro1" src="project/alarmclock/alarm6.PNG" alt="alrmclk">
+					<img id="pro1" src="project/alarmclock/alarm7.PNG" alt="alrmclk">
+				</div>
+			</div>
+			</div>
+			<div id="project2" style="display:none;">
+			<div id="proj2width" class="col-lg-11 mx-auto"><!-- style="width:970px;"-->
+				<p>Image Stitching</p>
+				<div class=swipe>
+					<img id="pro2" src="project/matlab/switch1.PNG" alt="imgstitch">
+					<img id="pro2" src="project/matlab/switch2.PNG" alt="imgstitch">
+					<img id="pro2" src="project/matlab/switch3.PNG" alt="imgstitch">
+					<img id="pro2" src="project/matlab/switch4.PNG" alt="imgstitch">
+					<img id="pro2" src="project/matlab/switch5.PNG" alt="imgstitch">
+				</div>
+			</div>
+			</div>
+			<div id="project3" style="display:none;">
+			<div id="proj3width" class="col-lg-9 mx-auto"><!-- style="width:780px;"-->
+				<p>Interactive Interior Design Program</p>
+				<div class=swipe>
+					<img id="pro3" src="project/opengl/opengl1.PNG" alt="interactiveprogram">
+					<img id="pro3" src="project/opengl/opengl2.PNG" alt="interactiveprogram">
+					<img id="pro3" src="project/opengl/opengl3.PNG" alt="interactiveprogram">
+					<img id="pro3" src="project/opengl/opengl4.PNG" alt="interactiveprogram">
+					<img id="pro3" src="project/opengl/opengl5-translate.PNG" alt="interactiveprogram">
+					<img id="pro3" src="project/opengl/opengl6-rotate.PNG" alt="interactiveprogram">
+					<img id="pro3" src="project/opengl/opengl7-raise.PNG" alt="interactiveprogram">
+				</div>
+			</div>
+			</div>
+			<div id="project4" style="display:none;">
+				<!--<p>Weather App</p>
+				<div class=swipe>
+				</div>-->
+			</div>
+			<div id="project5" style="display:none;">
+			<div id="proj5width" class="col-lg-8 mx-auto"><!--style="width:433px;"-->
+				<p>SD Designs</p>
+				<div class=swipe>
+					<img id="pro5" src="project/sddesign/sddesign1.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign2.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign3.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign4.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign5.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign55.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign6.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign7.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<!--<img src="project/sddesign/sddesign7-edit.png" style="width:400px;height:auto;">-->
+					<img id="pro5" src="project/sddesign/sddesign7-export.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign7-delete.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign8.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign8-import.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign8-import2.png" alt="sddesignapp" style="width:400px;height:auto;">
+					<img id="pro5" src="project/sddesign/sddesign9.png" alt="sddesignapp" style="width:400px;height:auto;">
+				</div>
+				</div>
+			</div>
+          </div>
+        </div>
+		<br>
+		<div id="hideproject" style="display:none;">
+		<ul class="list-inline banner-social-buttons">
+			<li class="list-inline-item">
+                <a href="#project" onclick="hide();" class="btn btn-default btn-lg js-scroll-trigger">
+                  <span class="network-name">Hide Project</span>
+                </a>
+            </li>
+        </ul>
+		</div>
+      </div>
+    </section>
+	
+	<!-- Contact Me -->
+    <section id="contact" class="gray-section content-section text-center">
+      <div class="container">
+        <div class="col-lg-8 mx-auto">
+			<h2>Contact</h2>
+			<!--<img align="left" src="img/hinesh.jpg" style="width:400px;height:auto;">
+			<img align="left" src="img/hinesh.jpg" style="width:400px;height:auto;">-->	
+			<aside id="sect">
+				<p style="font-size:23px;">Let's grab coffee!</p>
+				<p style="font-size:15px;">I am currently available for both full-time & part-time positions. Want to get in touch? <a href="mailto:hineshb@live.ca"> Shoot me an email!</a> </p>
+				<div>Email: <a href="mailto:hineshb@live.ca">hineshb@live.ca</a></div>
+				<div>Phone: (647)-740-6994</div>
+			</aside>
+			<section id="sech">
+			<!--<div style="display:inline-block;vertical-align:top;">--> <img id="hinesh" src="img/hinesh.png" alt="Hinesh" style="width:400px;height:auto;">
+			</section>	
+			
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; Hinesh Bulsara 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.min.js"></script>
+	
+	<!-- Resume Script -->
+	
+<script>
+var app = angular.module('app', []); 
+app.controller('infoCtrl', function($scope, $http) {
+	//$scope.list = [{task:'Clean House', done:false, description:"Clean"}];
+	//$scope.completelist = [];
+	$scope.list = [];
+	$http.get('info2.json').success(function (data) {
+		for (i=0;i< data.info.length;i++){
+			if(data.info[i].description
+			){
+			$scope.list.push({title:data.info[i].title, done:data.info[i].done, description:data.info[i].description});
+			}else{
+			$scope.list.push({title:data.info[i].title, done:data.info[i].done, description:"None."});
+			}
+			
+		}
+	})
+});  
+
+//Read html in json
+app.filter('to_trusted', ['$sce', function($sce){
+    return function(text) {
+        return $sce.trustAsHtml(text);
+    };
+}]);
+
+//$scope.highlight = function(text) {
+//    return $sce.trustAsHtml('<span class="highlightedText">' + text + '</span>'));
+//};
+
+//Highlight search
+app.filter('highlight', function($sce) {
+  return function(text, phrase) {
+    if (phrase){
+		text = text.replace(new RegExp('(' + phrase + ')', 'gi'),'<span class="highlightedText">$1</span>');
+	}
+    return $sce.trustAsHtml(text);
+  }
+});
+    
+</script>
+<!--Hide Elements Script-->
+<script>
+function showproject1() {
+    var a = document.getElementById("project1");
+	var b = document.getElementById("project2");
+	var c = document.getElementById("project3");
+	var d = document.getElementById("project4");
+	var e = document.getElementById("project5");
+	var f = document.getElementById("hideproject");
+    a.style.display = "block";
+	b.style.display = "none";
+	c.style.display = "none";
+	d.style.display = "none";
+	e.style.display = "none";
+	f.style.display = "block";
+}
+function showproject2() {
+    var a = document.getElementById("project1");
+	var b = document.getElementById("project2");
+	var c = document.getElementById("project3");
+	var d = document.getElementById("project4");
+	var e = document.getElementById("project5");
+	var f = document.getElementById("hideproject");
+    a.style.display = "none";
+	b.style.display = "block";
+	c.style.display = "none";
+	d.style.display = "none";
+	e.style.display = "none";
+	f.style.display = "block";
+}
+function showproject3() {
+    var a = document.getElementById("project1");
+	var b = document.getElementById("project2");
+	var c = document.getElementById("project3");
+	var d = document.getElementById("project4");
+	var e = document.getElementById("project5");
+	var f = document.getElementById("hideproject");
+    a.style.display = "none";
+	b.style.display = "none";
+	c.style.display = "block";
+	d.style.display = "none";
+	e.style.display = "none";
+	f.style.display = "block";
+}
+function showproject4() {
+    var a = document.getElementById("project1");
+	var b = document.getElementById("project2");
+	var c = document.getElementById("project3");
+	var d = document.getElementById("project4");
+	var e = document.getElementById("project5");
+	var f = document.getElementById("hideproject");
+    a.style.display = "none";
+	b.style.display = "none";
+	c.style.display = "none";
+	d.style.display = "block";
+	e.style.display = "none";
+	//f.style.display = "block";
+}
+function showproject5() {
+    var a = document.getElementById("project1");
+	var b = document.getElementById("project2");
+	var c = document.getElementById("project3");
+	var d = document.getElementById("project4");
+	var e = document.getElementById("project5");
+	var f = document.getElementById("hideproject");
+    a.style.display = "none";
+	b.style.display = "none";
+	c.style.display = "none";
+	d.style.display = "none";
+	e.style.display = "block";
+	f.style.display = "block";
+}
+function hide(){
+	var a = document.getElementById("project1");
+	var b = document.getElementById("project2");
+	var c = document.getElementById("project3");
+	var d = document.getElementById("project4");
+	var e = document.getElementById("project5");
+	var f = document.getElementById("hideproject");
+	a.style.display = "none";
+	b.style.display = "none";
+	c.style.display = "none";
+	d.style.display = "none";
+	e.style.display = "none";
+	f.style.display = "none";
+}
+function hideresume() {
+    var x = document.getElementById("hideresume");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+/*function doalert(obj) {
+	var x = obj.getAttribute("href")
+	alert(obj.getAttribute("href"));
+    return false;
+}*/
+</script>
+
+
+  </body>
+
+</html>

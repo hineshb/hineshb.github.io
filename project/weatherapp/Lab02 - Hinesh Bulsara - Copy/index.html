@@ -1,0 +1,30 @@
+ <!DOCTYPE	html>	
+ <html>	
+ <head>	
+	<meta charset="UTF-8"/>	
+	<title>CPS630 Lab 02</title>	
+	<link rel="stylesheet" type="text/css" href="lab02.css">
+	<script type="text/javascript" src="lab02.js"></script>	<!-- Google -->	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- End -->
+</head>
+
+<body onload="loaddefault()"><!--<body onload="loaddefault()">	-->
+<header id='bar'><section id=''><h1 id='h1temp'>  Hinesh's Weather Network<span id='adjust'><button type="button" class="btn btn-default" onclick="celsius()">Celsius</button><button type="button" class="btn btn-default" onclick="fahren()">Fahrenheit</button></span></h1></section>
+</header>
+<section id='sec1'><section id='subsec1'>
+<form id="city">
+  <b>Enter City:</b> <input type="text" placeholder="Toronto" name="city" id="autocomplete"> </input><br><br>
+  <button id='button2' type = "button" class="btn btn-default" onclick="cityname()"> Search </button> <span> May require several clicks for optimal update, Thank you.</span>  <!--<button type = "button" class="btn btn-default" onclick="cityname2()"> Search2 </button>-->  
+</form></section><section id='subsec1'><script>today();</script></section>
+</section>
+<section id='sec2'>
+<h1 id='opac'> Current Weather </h1><section id='center'>
+<p id='ccity'> <span id="Name"></span>, <span id="Country"></span></p><p> <span id="Img1"></span> <span id="Temperature1"></span> <sup>o</sup><span id="Unit"></span> </p><p> Weather: <span id="Weather1"></span> </p><p> Wind speed: <span id="Wind1"></span> m/s </p><p> Humidity: <span id="Humidity1"></span>% </p></section>
+</section><section id='hourlydisplay'><h1 id='opac'> Hourly Forcast </h1><button id='button2' type = "button" class="btn btn-default" onclick="loadHourly()"> Click Here (Update) </button> <button id='button2' type = "button" class="btn btn-default" onclick="hide()"> Hide </button><br><section id='hourlysec'><section id='hourlysec2'> <!--<p id='centerdate'><script>today2();</script> </p>--><p id='opac2'> <span id="HourDate1"></span>  <span id="HourImg1"></span> <span id="HourTemp1"></span><span id="HourUnit1"></span>  <span id="HourWeather1"></span>  <span id="HourWind1"></span>   <span id="HourHumidity1"></span></p><p id='opac2'> <span id="HourDate2"></span>  <span id="HourImg2"></span> <span id="HourTemp2"></span><span id="HourUnit2"></span>  <span id="HourWeather2"></span>  <span id="HourWind2"></span>   <span id="HourHumidity2"></span></p><p id='opac2'> <span id="HourDate3"></span>  <span id="HourImg3"></span> <span id="HourTemp3"></span><span id="HourUnit3"></span>  <span id="HourWeather3"></span>  <span id="HourWind3"></span>   <span id="HourHumidity3"></span></p><p id='opac2'> <span id="HourDate4"></span>  <span id="HourImg4"></span> <span id="HourTemp4"></span><span id="HourUnit4"></span>  <span id="HourWeather4"></span>  <span id="HourWind4"></span>   <span id="HourHumidity4"></span></p><p id='opac2'> <span id="HourDate5"></span>  <span id="HourImg5"></span> <span id="HourTemp5"></span><span id="HourUnit5"></span>  <span id="HourWeather5"></span>  <span id="HourWind5"></span>   <span id="HourHumidity5"></span></p><p id='opac2'> <span id="HourDate6"></span>  <span id="HourImg6"></span> <span id="HourTemp6"></span><span id="HourUnit6"></span>  <span id="HourWeather6"></span>  <span id="HourWind6"></span>   <span id="HourHumidity6"></span></p><p id='opac2'> <span id="HourDate7"></span>  <span id="HourImg7"></span> <span id="HourTemp7"></span><span id="HourUnit7"></span>  <span id="HourWeather7"></span>  <span id="HourWind7"></span>   <span id="HourHumidity7"></span></p></section></section></section><section id='sec3'><h1 id='opac'> 5-Day Forcast </h1><section id='sec5'><p id='centerdate'> <span id="tomorrow1"></span> </p><p id='opac2'> <span id="Img2"></span> <span id="Temp2"></span> <sup>o</sup><span id="Unit2"></span> </p><p id='opac2'> Weather: <span id="Weather2"></span> </p><p id='opac2'> Wind speed: <span id="Wind2"></span> m/s </p><p id='opac2'> Humidity: <span id="Humidity2"></span>% </p></section><section id='sec4'><p id='centerdate'> <span id="tomorrow2"></span> </p><p id='opac2'> <span id="Img3"></span> <span id="Temp3"></span> <sup>o</sup><span id="Unit3"></span> </p><p id='opac2'> Weather: <span id="Weather3"></span> </p><p id='opac2'> Wind speed: <span id="Wind3"></span> m/s </p><p id='opac2'> Humidity: <span id="Humidity3"></span>% </p></section><section id='sec4'><p id='centerdate'> <span id="tomorrow3"></span> </p><p id='opac2'> <span id="Img4"></span> <span id="Temp4"></span> <sup>o</sup><span id="Unit4"></span> </p><p id='opac2'> Weather: <span id="Weather4"></span> </p><p id='opac2'> Wind speed: <span id="Wind4"></span> m/s </p><p id='opac2'> Humidity: <span id="Humidity4"></span>% </p></section><section id='sec4'><p id='centerdate'> <span id="tomorrow4"></span> </p><p id='opac2'> <span id="Img5"></span> <span id="Temp5"></span> <sup>o</sup><span id="Unit5"></span> </p><p id='opac2'> Weather: <span id="Weather5"></span> </p><p id='opac2'> Wind speed: <span id="Wind5"></span> m/s </p><p id='opac2'> Humidity: <span id="Humidity5"></span>% </p></section><section id='sec4'><p id='centerdate'> <span id="tomorrow5"></span> </p><p id='opac2'> <span id="Img6"></span> <span id="Temp6"></span> <sup>o</sup><span id="Unit6"></span> </p><p id='opac2'> Weather: <span id="Weather6"></span> </p><p id='opac2'> Wind speed: <span id="Wind6"></span> m/s </p><p id='opac2'> Humidity: <span id="Humidity6"></span>% </p></section></section>
+</body>	
+</html>	
+  	
