@@ -379,7 +379,7 @@ img::-moz-selection {
 	margin-left:1.5%;
 	}
 	iframe {
-       width: 300px; /* It should not be 100% */
+       width: 400px; /* It should not be 100% */
        height: 500px;
     } 
 }
