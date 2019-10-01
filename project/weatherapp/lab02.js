@@ -101,7 +101,7 @@ function tomorrow(){
 }
 
 function loadWeather(city){
-            var site = "http://api.openweathermap.org/data/2.5/weather?q="+ city  + "&APPID=10b50ba8305895a335f5ebd33514c94a";
+            var site = "https://api.openweathermap.org/data/2.5/weather?q="+ city  + "&APPID=10b50ba8305895a335f5ebd33514c94a";
             var http = new XMLHttpRequest();
 			
             try{
@@ -137,7 +137,7 @@ function loadWeather(city){
 				  document.getElementById("Country").innerHTML = jsonObj.sys.country;
                   document.getElementById("Temperature1").innerHTML = Math.round(jsonObj.main.temp - 273);
 				  kelvin[0] = jsonObj.main.temp;
-				  document.getElementById("Img1").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.weather[0].icon + ".png>";
+				  document.getElementById("Img1").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.weather[0].icon + ".png>";
 				  document.getElementById("Unit").innerHTML = "C";
 				  document.getElementById("Weather1").innerHTML = jsonObj.weather[0].main;
 				  document.getElementById("Wind1").innerHTML = jsonObj.wind.speed;
@@ -211,7 +211,7 @@ function loadWeather(city){
  
  function loadHourly(){
 			var city = document.getElementById("Name").innerHTML;
-            var site = "http://api.openweathermap.org/data/2.5/forecast/?q="+ city  + "&APPID=10b50ba8305895a335f5ebd33514c94a";
+            var site = "https://api.openweathermap.org/data/2.5/forecast/?q="+ city  + "&APPID=10b50ba8305895a335f5ebd33514c94a";
             var http2 = new XMLHttpRequest();
 			
             try{
@@ -255,7 +255,7 @@ function loadWeather(city){
 				    document.getElementById("HourDate1").innerHTML = (month[months] + " " + day + " " + hours + ":" + minutes.substr(-2)) + "  |  ";
 					document.getElementById("HourTemp1").innerHTML =  Math.round(jsonObj.list[0].main.temp -273) + " <sup>o</sup>";
 					hourkelvin[0] = jsonObj.list[0].main.temp;
-					document.getElementById("HourImg1").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[0].weather[0].icon  + ".png>";
+					document.getElementById("HourImg1").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[0].weather[0].icon  + ".png>";
 					document.getElementById("HourUnit1").innerHTML = "C" + "  |  ";
 					document.getElementById("HourWeather1").innerHTML = jsonObj.list[0].weather[0].description + "  |  ";
 					document.getElementById("HourWind1").innerHTML = jsonObj.list[0].wind.speed + " m/s" + "  |  ";
@@ -270,7 +270,7 @@ function loadWeather(city){
 					document.getElementById("HourDate2").innerHTML = (month[months] + " " + day + " " + hours + ":" + minutes.substr(-2)) + "  |  ";
 					document.getElementById("HourTemp2").innerHTML =  Math.round(jsonObj.list[1].main.temp -273) + " <sup>o</sup>";
 					hourkelvin[1] = jsonObj.list[1].main.temp;
-					document.getElementById("HourImg2").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[1].weather[0].icon  + ".png>";
+					document.getElementById("HourImg2").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[1].weather[0].icon  + ".png>";
 					document.getElementById("HourUnit2").innerHTML = "C" + "  |  ";
 					document.getElementById("HourWeather2").innerHTML = jsonObj.list[1].weather[0].description + "  |  ";
 					document.getElementById("HourWind2").innerHTML = jsonObj.list[1].wind.speed + " m/s" + "  |  ";
@@ -285,7 +285,7 @@ function loadWeather(city){
 					document.getElementById("HourDate3").innerHTML = (month[months] + " " + day + " " + hours + ":" + minutes.substr(-2)) + "  |  ";
 					document.getElementById("HourTemp3").innerHTML =  Math.round(jsonObj.list[2].main.temp -273) + " <sup>o</sup>";
 					hourkelvin[2] = jsonObj.list[2].main.temp;
-					document.getElementById("HourImg3").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[2].weather[0].icon  + ".png>";
+					document.getElementById("HourImg3").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[2].weather[0].icon  + ".png>";
 					document.getElementById("HourUnit3").innerHTML = "C" + "  |  ";
 					document.getElementById("HourWeather3").innerHTML = jsonObj.list[2].weather[0].description + "  |  ";
 					document.getElementById("HourWind3").innerHTML = jsonObj.list[2].wind.speed + " m/s" + "  |  ";
@@ -300,7 +300,7 @@ function loadWeather(city){
 					document.getElementById("HourDate4").innerHTML = (month[months] + " " + day + " " + hours + ":" + minutes.substr(-2)) + "  |  ";
 					document.getElementById("HourTemp4").innerHTML =  Math.round(jsonObj.list[3].main.temp -273) + " <sup>o</sup>";
 					hourkelvin[3] = jsonObj.list[3].main.temp;
-					document.getElementById("HourImg4").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[3].weather[0].icon  + ".png>";
+					document.getElementById("HourImg4").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[3].weather[0].icon  + ".png>";
 					document.getElementById("HourUnit4").innerHTML = "C" + "  |  ";
 					document.getElementById("HourWeather4").innerHTML = jsonObj.list[3].weather[0].description + "  |  ";
 					document.getElementById("HourWind4").innerHTML = jsonObj.list[3].wind.speed + " m/s" + "  |  ";
@@ -315,7 +315,7 @@ function loadWeather(city){
 					document.getElementById("HourDate5").innerHTML = (month[months] + " " + day + " " + hours + ":" + minutes.substr(-2)) + "  |  ";
 					document.getElementById("HourTemp5").innerHTML =  Math.round(jsonObj.list[4].main.temp -273) + " <sup>o</sup>";
 					hourkelvin[4] = jsonObj.list[4].main.temp;
-					document.getElementById("HourImg5").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[4].weather[0].icon  + ".png>";
+					document.getElementById("HourImg5").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[4].weather[0].icon  + ".png>";
 					document.getElementById("HourUnit5").innerHTML = "C" + "  |  ";
 					document.getElementById("HourWeather5").innerHTML = jsonObj.list[4].weather[0].description + "  |  ";
 					document.getElementById("HourWind5").innerHTML = jsonObj.list[4].wind.speed + " m/s" + "  |  ";
@@ -330,7 +330,7 @@ function loadWeather(city){
 					document.getElementById("HourDate6").innerHTML = (month[months] + " " + day + " " + hours + ":" + minutes.substr(-2)) + "  |  ";
 					document.getElementById("HourTemp6").innerHTML =  Math.round(jsonObj.list[5].main.temp -273) + " <sup>o</sup>";
 					hourkelvin[5] = jsonObj.list[5].main.temp;
-					document.getElementById("HourImg6").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[5].weather[0].icon  + ".png>";
+					document.getElementById("HourImg6").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[5].weather[0].icon  + ".png>";
 					document.getElementById("HourUnit6").innerHTML = "C" + "  |  ";
 					document.getElementById("HourWeather6").innerHTML = jsonObj.list[5].weather[0].description + "  |  ";
 					document.getElementById("HourWind6").innerHTML = jsonObj.list[5].wind.speed + " m/s" + "  |  ";
@@ -345,7 +345,7 @@ function loadWeather(city){
 					document.getElementById("HourDate7").innerHTML = (month[months] + " " + day + " " + hours + ":" + minutes.substr(-2)) + "  |  ";
 					document.getElementById("HourTemp7").innerHTML =  Math.round(jsonObj.list[6].main.temp -273) + " <sup>o</sup>";
 					hourkelvin[6] = jsonObj.list[6].main.temp;
-					document.getElementById("HourImg7").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[6].weather[0].icon  + ".png>";
+					document.getElementById("HourImg7").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[6].weather[0].icon  + ".png>";
 					document.getElementById("HourUnit7").innerHTML = "C" + "  |  ";
 					document.getElementById("HourWeather7").innerHTML = jsonObj.list[6].weather[0].description + "  |  ";
 					document.getElementById("HourWind7").innerHTML = jsonObj.list[6].wind.speed + " m/s" + "  |  ";
@@ -364,7 +364,7 @@ function loadWeather(city){
  //http://api.openweathermap.org/data/2.5/forecast/daily?q="+ city  + "&APPID=10b50ba8305895a335f5ebd33514c94a&cnt=5
  //Forcast
  function loadForcast(city){
-           var site = "http://api.openweathermap.org/data/2.5/forecast/daily?q="+ city  + "&APPID=10b50ba8305895a335f5ebd33514c94a&cnt=5";
+           var site = "https://api.openweathermap.org/data/2.5/forecast/daily?q="+ city  + "&APPID=10b50ba8305895a335f5ebd33514c94a&cnt=5";
             var http2 = new XMLHttpRequest();
 			
             try{
@@ -399,7 +399,7 @@ function loadWeather(city){
 				  //Day1
                   document.getElementById("Temp2").innerHTML = Math.round(jsonObj.list[0].temp.day -273);
 				  kelvin[1] = jsonObj.list[0].temp.day;
-				  document.getElementById("Img2").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[0].weather[0].icon  + ".png>";
+				  document.getElementById("Img2").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[0].weather[0].icon  + ".png>";
 				  document.getElementById("Unit2").innerHTML = "C";
 				  document.getElementById("Weather2").innerHTML = jsonObj.list[0].weather[0].main;
 				  document.getElementById("Wind2").innerHTML = jsonObj.list[0].speed;
@@ -407,7 +407,7 @@ function loadWeather(city){
 				  //Day2
                   document.getElementById("Temp3").innerHTML = Math.round(jsonObj.list[1].temp.day -273);
 				  kelvin[2] = jsonObj.list[1].temp.day;
-				  document.getElementById("Img3").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[1].weather[0].icon  + ".png>";
+				  document.getElementById("Img3").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[1].weather[0].icon  + ".png>";
 				  document.getElementById("Unit3").innerHTML = "C";
 				  document.getElementById("Weather3").innerHTML = jsonObj.list[1].weather[0].main;
 				  document.getElementById("Wind3").innerHTML = jsonObj.list[1].speed;
@@ -415,7 +415,7 @@ function loadWeather(city){
 				  //Day3
                   document.getElementById("Temp4").innerHTML = Math.round(jsonObj.list[2].temp.day -273);
 				  kelvin[3] = jsonObj.list[2].temp.day;
-				  document.getElementById("Img4").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[2].weather[0].icon  + ".png>";
+				  document.getElementById("Img4").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[2].weather[0].icon  + ".png>";
 				  document.getElementById("Unit4").innerHTML = "C";
 				  document.getElementById("Weather4").innerHTML = jsonObj.list[2].weather[0].main;
 				  document.getElementById("Wind4").innerHTML = jsonObj.list[2].speed;
@@ -423,7 +423,7 @@ function loadWeather(city){
 				  //Day4
                   document.getElementById("Temp5").innerHTML = Math.round(jsonObj.list[3].temp.day -273);
 				  kelvin[4] = jsonObj.list[3].temp.day;
-				  document.getElementById("Img5").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[3].weather[0].icon  + ".png>";
+				  document.getElementById("Img5").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[3].weather[0].icon  + ".png>";
 				  document.getElementById("Unit5").innerHTML = "C";
 				  document.getElementById("Weather5").innerHTML = jsonObj.list[3].weather[0].main;
 				  document.getElementById("Wind5").innerHTML = jsonObj.list[3].speed;
@@ -431,7 +431,7 @@ function loadWeather(city){
 				  //Day5
                   document.getElementById("Temp6").innerHTML = Math.round(jsonObj.list[4].temp.day -273);
 				  kelvin[5] = jsonObj.list[4].temp.day;
-				  document.getElementById("Img6").innerHTML = "<img src=" + "http://openweathermap.org/img/w/" + jsonObj.list[4].weather[0].icon  + ".png>";
+				  document.getElementById("Img6").innerHTML = "<img src=" + "https://openweathermap.org/img/w/" + jsonObj.list[4].weather[0].icon  + ".png>";
 				  document.getElementById("Unit6").innerHTML = "C";
 				  document.getElementById("Weather6").innerHTML = jsonObj.list[4].weather[0].main;
 				  document.getElementById("Wind6").innerHTML = jsonObj.list[4].speed;
