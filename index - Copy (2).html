@@ -151,13 +151,6 @@
                 </a>
               </li>
             </ul>
-			<ul class="list-inline banner-social-buttons">
-			<li class="list-inline-item">
-                <a href="#projectscroll" onclick="showproject6();" class="btn btn-default btn-lg js-scroll-trigger">
-                  <span class="network-name">OMS CheatSheet</span>
-                </a>
-              </li>
-			</ul>
 			<br>
 			<br id="projectscroll">
             <div id="project1" style="display:none;">
@@ -228,18 +221,6 @@
 				</div>
 				</div>
 			</div>
-			<div id="project6" style="display:none;">
-			<div id="proj2width" class="col-lg-11 mx-auto"><!--style="width:433px;"-->
-				<p>OMS CheatSheet</p>
-				<div class=swipe>
-					<img id="pro6" src="project/omsCS/oms3.png" alt="oms">
-					<img id="pro6" src="project/omsCS/oms4.png" alt="oms">
-					<img id="pro6" src="project/omsCS/oms1.png" alt="oms">
-					<img id="pro6" src="project/omsCS/oms2.png" alt="oms">
-					<img id="pro6" src="project/omsCS/oms5.png" alt="oms">
-				</div>
-				</div>
-			</div>
           </div>
         </div>
 		<br>
@@ -277,11 +258,11 @@
     </section>
 
     <!-- Footer -->
-		<footer>
-		  <div class="container text-center">
-			<p>Copyright &copy; Hinesh Bulsara <span id="todayyear">Year</span></p>
-		  </div>
-		</footer>
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; Hinesh Bulsara 2018</p>
+      </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -299,9 +280,6 @@
 	<!-- Resume Script -->
 	
 <script>
-var d = new Date();
-document.getElementById("todayyear").innerHTML = d.getFullYear();
-
 var app = angular.module('app', []); 
 app.controller('infoCtrl', function($scope, $http) {
 	//$scope.list = [{task:'Clean House', done:false, description:"Clean"}];
@@ -351,15 +329,12 @@ function showproject1() {
 	var d = document.getElementById("project4");
 	var e = document.getElementById("project5");
 	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
     a.style.display = "block";
 	b.style.display = "none";
 	c.style.display = "none";
 	d.style.display = "none";
 	e.style.display = "none";
 	f.style.display = "block";
-	g.style.display = "none";
-	
 }
 function showproject2() {
     var a = document.getElementById("project1");
@@ -368,14 +343,12 @@ function showproject2() {
 	var d = document.getElementById("project4");
 	var e = document.getElementById("project5");
 	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
     a.style.display = "none";
 	b.style.display = "block";
 	c.style.display = "none";
 	d.style.display = "none";
 	e.style.display = "none";
 	f.style.display = "block";
-	g.style.display = "none";
 }
 function showproject3() {
     var a = document.getElementById("project1");
@@ -384,14 +357,12 @@ function showproject3() {
 	var d = document.getElementById("project4");
 	var e = document.getElementById("project5");
 	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
     a.style.display = "none";
 	b.style.display = "none";
 	c.style.display = "block";
 	d.style.display = "none";
 	e.style.display = "none";
 	f.style.display = "block";
-	g.style.display = "none";
 }
 function showproject4() {
     var a = document.getElementById("project1");
@@ -400,7 +371,6 @@ function showproject4() {
 	var d = document.getElementById("project4");
 	var e = document.getElementById("project5");
 	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
     a.style.display = "none";
 	b.style.display = "none";
 	c.style.display = "none";
@@ -415,30 +385,12 @@ function showproject5() {
 	var d = document.getElementById("project4");
 	var e = document.getElementById("project5");
 	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
     a.style.display = "none";
 	b.style.display = "none";
 	c.style.display = "none";
 	d.style.display = "none";
 	e.style.display = "block";
 	f.style.display = "block";
-	g.style.display = "none";
-}
-function showproject6() {
-    var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-    a.style.display = "none";
-	b.style.display = "none";
-	c.style.display = "none";
-	d.style.display = "none";
-	e.style.display = "none";
-	f.style.display = "block";
-	g.style.display = "block";
 }
 function hide(){
 	var a = document.getElementById("project1");
@@ -447,14 +399,12 @@ function hide(){
 	var d = document.getElementById("project4");
 	var e = document.getElementById("project5");
 	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
 	a.style.display = "none";
 	b.style.display = "none";
 	c.style.display = "none";
 	d.style.display = "none";
 	e.style.display = "none";
 	f.style.display = "none";
-	g.style.display = "none";
 }
 function hideresume() {
     var x = document.getElementById("hideresume");
