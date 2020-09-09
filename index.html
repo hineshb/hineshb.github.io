@@ -152,12 +152,17 @@
               </li>
             </ul>
 			<ul class="list-inline banner-social-buttons">
-			<li class="list-inline-item">
-                <a href="#projectscroll" onclick="showproject6();" class="btn btn-default btn-lg js-scroll-trigger">
-                  <span class="network-name">OMS CheatSheet</span>
-                </a>
-              </li>
-			</ul>
+				<li class="list-inline-item">
+					<a href="#projectscroll" onclick="showproject6();" class="btn btn-default btn-lg js-scroll-trigger">
+					  <span class="network-name">OMS CheatSheet</span>
+					</a>
+				</li>
+				<li class="list-inline-item">
+					<a href="project/sjhcpharmacy/index.html" target="_blank" onclick="showproject7();" class="btn btn-default btn-lg js-scroll-trigger">
+					  <span class="network-name">SJHC Pharmacy Wear</span>
+					</a>
+				  </li>
+				</ul>
 			<br>
 			<br id="projectscroll">
             <div id="project1" style="display:none;">
@@ -408,9 +413,10 @@ function showproject4() {
     a.style.display = "none";
 	b.style.display = "none";
 	c.style.display = "none";
-	d.style.display = "block";
+	d.style.display = "none";
 	e.style.display = "none";
-	//f.style.display = "block";
+	f.style.display = "none";
+	g.style.display = "none";
 }
 function showproject5() {
     var a = document.getElementById("project1");
@@ -443,6 +449,22 @@ function showproject6() {
 	e.style.display = "none";
 	f.style.display = "block";
 	g.style.display = "block";
+}
+function showproject7() {
+    var a = document.getElementById("project1");
+	var b = document.getElementById("project2");
+	var c = document.getElementById("project3");
+	var d = document.getElementById("project4");
+	var e = document.getElementById("project5");
+	var f = document.getElementById("hideproject");
+	var g = document.getElementById("project6");
+    a.style.display = "none";
+	b.style.display = "none";
+	c.style.display = "none";
+	d.style.display = "none";
+	e.style.display = "none";
+	f.style.display = "none";
+	g.style.display = "none";
 }
 function hide(){
 	var a = document.getElementById("project1");

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>SJHC Pharmacy Wear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
+  <a href="#main" class="mainpage" onclick="showHide('main')">Home</a><br>
+  <hr>
+  <a href="#cloth1" onClick="showHide('cloth1')">Round Neck T-Shirts</a><hr>
+  <a href="#cloth2" onClick="showHide('cloth2')">V-Neck T-Shirts</a><hr>
+  <a href="#cloth3" onClick="showHide('cloth3')">Golf Shirts</a><hr>
+  <a href="#cloth4" onClick="showHide('cloth4')">Crewnecks</a><hr>
+  <a href="#cloth5" onClick="showHide('cloth5')">Hooded Sweaters</a><hr>
+  <a href="#cloth6" onClick="showHide('cloth6')">Half Zip Sweaters</a><hr>
+  <a href="#cloth7" onClick="showHide('cloth7')">Full Zip Hooded Sweaters</a><hr>
+  <a href="#cloth8" onClick="showHide('cloth8')">Woman's Full Zip Hooded Sweaters</a><hr>
+  <a href="#contactus" onClick="showHide('contactus')">Contact Us / Issues</a><hr>
+  <a class="shopcartSide" href="#shopcart" onClick="showHide('shopcart')">Shopping Cart <i class="fa fa-shopping-cart"></i></a> <hr class="shopcartSide">
+</div>
+
+<div class="openbtn">
+<span onclick="openNav()" style="display:inline; text-align: left; border: 2px solid pink; border-radius: 40%">&#9776;</span><!--SJHC Pharmacy Wear-->
+<div onclick="showHide('main')">SJHC Pharmacy Wear</div>
+<!--<span class="shopcart" onClick="showHide('shopcart')">Shopping Cart<img id="shopcart1" src="images\shopping-cart.png" alt="shopcart" style="width:10%"></span>-->
+<span class="shopcart" onClick="showHide('shopcart')"><i class="fa fa-shopping-cart"></i></span>
+</div>
+
+
+<!-- Home page -->
+<div id="main">
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+	<h1> Welcome to SJHC Pharmacy Wear </h1>
+	</div>
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+	<h2> You may select from below or use the side navgation bar to navigate </h2>
+	</div>
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+	<h2 style="border: 4px red solid"> ***This website is for showcasing and will not send order to SJHC Pharmacy*** </h2>
+	</div>
+	<div class="homeRow"> 
+		<div class="homeContainer homeColumn">
+			<h4 class="mobiletitle">Round Neck T-Shirt</h4>
+			<img src="images\rneckt\r_neck_t_black.jpg" alt="Round Neck T-Shirt" class="homeImage" style="width:100%" onclick="showHide('cloth1')">
+			<div class="homeMiddleBox" onclick="showHide('cloth1')">
+				<div class="homeTextMiddle">Round Neck T-Shirt</div>
+			</div>
+		</div>
+		<div class="homeContainer homeColumn">
+			<h4 class="mobiletitle">V-Neck T-Shirts</h4>
+			<img src="images\vneckt\v_neck_t_black.jpg" alt="V-Neck T-Shirts" class="homeImage" style="width:100%" onclick="showHide('cloth2')">
+			<div class="homeMiddleBox" onclick="showHide('cloth2')">
+				<div class="homeTextMiddle">V-Neck T-Shirts</div>
+			</div>
+		</div>
+		<div class="homeContainer homeColumn">
+		<h4 class="mobiletitle">Golf Shirt</h4>
+			<img src="images\golf\golf_t_black.jpg" alt="Golf Shirt" class="homeImage" style="width:100%" onclick="showHide('cloth3')">
+			<div class="homeMiddleBox" onclick="showHide('cloth3')">
+				<div class="homeTextMiddle">Golf Shirt</div>
+			</div>
+		</div>
+		<div class="homeContainer homeColumn">
+			<h4 class="mobiletitle">Crewneck</h4>
+			<img src="images\crew\crew_black.jpg" alt="Crewneck" class="homeImage" style="width:100%" onclick="showHide('cloth4')">
+			<div class="homeMiddleBox" onclick="showHide('cloth4')">
+				<div class="homeTextMiddle">Crewneck</div>
+			</div>
+		</div>
+	</div>
+	<div class="homeRow"> 
+		<div class="homeContainer homeColumn">
+			<h4 class="mobiletitle">Hooded Sweater</h4>
+			<img src="images\hood\hood_black.jpg" alt="Hooded Sweater" class="homeImage" style="width:100%" onclick="showHide('cloth5')">
+			<div class="homeMiddleBox" onclick="showHide('cloth5')">
+				<div class="homeTextMiddle">Hooded Sweater</div>
+			</div>
+		</div>
+		<div class="homeContainer homeColumn">
+			<h4 class="mobiletitle">Half Zip Sweater</h4>
+			<img src="images\hzip\h_zip_black.jpg" alt="Half Zip Sweater" class="homeImage" style="width:100%" onclick="showHide('cloth6')">
+			<div class="homeMiddleBox" onclick="showHide('cloth6')">
+				<div class="homeTextMiddle">Half Zip Sweater</div>
+			</div>
+		</div>
+		<div class="homeContainer homeColumn">
+			<h4 class="mobiletitle">Full Zip Hooded Sweater</h4>
+			<img src="images\fzip\f_zip_black.jpg" alt="Full Zip Hooded Sweater" class="homeImage" style="width:100%" onclick="showHide('cloth7')">
+			<div class="homeMiddleBox" onclick="showHide('cloth7')">
+				<div class="homeTextMiddle">Full Zip Hooded Sweater</div>
+			</div>
+		</div>
+		<div class="homeContainer homeColumn">
+			<h4 class="mobiletitle">Woman's Full Zip Hooded Sweater</h4>
+			<img src="images\wfzip\wf_zip_black.jpg" alt="Woman's Full Zip Hooded Sweater" class="homeImage" style="width:100%" onclick="showHide('cloth8')">
+			<div class="homeMiddleBox" onclick="showHide('cloth8')">
+				<div class="homeTextMiddle">Woman's Full Zip Hooded Sweater</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Round Neck T-Shirts-->
+<div id="cloth1" style="transition: margin-left .5s; padding: 16px; display: none;">	
+	<h1 style="text-align: center;">Round Neck T-Shirts</h1>
+	<!--Card-->
+	<div class="card">
+	<img id="imgChangeRneckt" src="images\rneckt\r_neck_t_black.jpg" alt="Round Neck T-Shirt" style="width:100%">
+	<!--Colours Avaiable-->
+	<div class="divColor">
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: black; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeRneckt').src='images/rneckt/r_neck_t_black.jpg';document.getElementById('rneckColor').innerText='Black';"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: blue; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeRneckt').src='images/rneckt/r_neck_t_blue.jpg';document.getElementById('rneckColor').innerText='Blue';"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: grey; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeRneckt').src='images/rneckt/r_neck_t_grey.jpg';document.getElementById('rneckColor').innerText='Grey';"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: #6F1ED0; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeRneckt').src='images/rneckt/r_neck_t_purple.jpg';document.getElementById('rneckColor').innerText='Purple';"></span>
+	</div>
+	<!--Options for Clothing-->
+	<form action="/action_page.php">
+	<p>Selected: <span id="rneckColor" style="font-weight: bold;">Black</span></p>
+	<label for="rneckQuantity">Quantity:</label>
+	<select id="rneckQuantity" name="rneckQuantity">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label for="rneckSize">Size:</label>
+	<select id="rneckSize" name="rneckSize">
+		<option value="Small">Small</option>
+		<option value="Medium">Medium</option>
+		<option value="Large">Large</option>
+	</select>
+	</form> 
+	<!--Price of clothing-->
+	<p id="rneckPrice" style="color: grey;font-size: 22px;">$20.00/per</p>
+	<!--Description and Submitting-->
+	<p>Round Neck T-Shirts are 100% preshrunk cotton classic Gildan fit.</p>
+	<p><button type="button" onclick="addToCart(rneckQuantity, rneckSize, rneckPrice, rneckColor, imgChangeRneckt)">Add to Cart</button></p>
+	</div>
+</div>
+
+<!-- V-Neck T-Shirts-->
+<div id="cloth2" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<h1 style="text-align: center;">V-Neck T-Shirts</h1>
+	<!--Card-->
+	<div class="card">
+	<img id="imgChangeVneckt" src="images\vneckt\v_neck_t_black.jpg" alt="V-Neck T-Shirt" style="width:100%">
+	<!--Colours Avaiable-->
+	<div class="divColor">
+	<span id="spanColor1" style="height: 35px; width: 35px; background-color: black; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeVneckt').src='images/vneckt/v_neck_t_black.jpg';document.getElementById('vneckColor').innerText='Black'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: blue; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeVneckt').src='images/vneckt/v_neck_t_blue.jpg';document.getElementById('vneckColor').innerText='Blue'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: grey; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeVneckt').src='images/vneckt/v_neck_t_grey.jpg';document.getElementById('vneckColor').innerText='Grey'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: #6F1ED0; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeVneckt').src='images/vneckt/v_neck_t_purple.jpg';document.getElementById('vneckColor').innerText='Purple'"></span>
+	</div>
+	<!--Options for Clothing-->
+	<form action="/action_page.php">
+	<p>Selected: <span id="vneckColor" style="font-weight: bold;">Black</span></p>
+	<label for="vneckQuantity">Quantity:</label>
+	<select id="vneckQuantity" name="vneckQuantity">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label for="vneckSize">Size:</label>
+	<select id="vneckSize" name="vneckSize">
+		<option value="Small">Small</option>
+		<option value="Medium">Medium</option>
+		<option value="Large">Large</option>
+	</select>
+	</form> 
+	<!--Price of clothing-->
+	<p id="vneckPrice" style="color: grey;font-size: 22px;">$20.00/per</p>
+	<!--Description and Submitting-->
+	<p>V-Neck T-Shirts are 100% preshrunk cotton.</p>
+	<p><button type="button" onclick="addToCart(vneckQuantity, vneckSize, vneckPrice, vneckColor, imgChangeVneckt)">Add to Cart</button></p>
+	</div>
+</div>
+
+<!-- Golf Shirts-->
+<div id="cloth3" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<h1 style="text-align: center;">Golf Shirts</h1>
+	<!--Card-->
+	<div class="card">
+	<img id="imgChangeGolf" src="images\golf\golf_t_black.jpg" alt="Golf Shirt" style="width:100%">
+	<!--Colours Avaiable-->
+	<div class="divColor">
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: black; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeGolf').src='images/golf/golf_t_black.jpg';document.getElementById('golfColor').innerText='Black'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: blue; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeGolf').src='images/golf/golf_t_blue.jpg';document.getElementById('golfColor').innerText='Blue'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: grey; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeGolf').src='images/golf/golf_t_grey.jpg';document.getElementById('golfColor').innerText='Grey'"></span>
+	</div>
+	<!--Options for Clothing-->
+	<form action="/action_page.php">
+	<p>Selected: <span id="golfColor" style="font-weight: bold;">Black</span></p>
+	<label for="golfQuantity">Quantity:</label>
+	<select id="golfQuantity" name="golfQuantity">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label for="golfSize">Size:</label>
+	<select id="golfSize" name="golfSize">
+		<option value="Small">Small</option>
+		<option value="Medium">Medium</option>
+		<option value="Large">Large</option>
+	</select>
+	</form> 
+	<!--Price of clothing-->
+	<p id="golfPrice" style="color: grey;font-size: 22px;">$25.00/per</p>
+	<!--Description and Submitting-->
+	<p>Golf Shirts are preshrunk 100% ringspun cotton.</p>
+	<p><button type="button" onclick="addToCart(golfQuantity, golfSize, golfPrice, golfColor, imgChangeGolf)">Add to Cart</button></p>
+	</div>
+</div>
+
+<!-- Crewnecks-->
+<div id="cloth4" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<h1 style="text-align: center;">Crewnecks</h1>
+	<!--Card-->
+	<div class="card">
+	<img id="imgChangeCrew" src="images\crew\crew_black.jpg" alt="Crewneck" style="width:100%">
+	<!--Colours Avaiable-->
+	<div class="divColor">
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: black; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeCrew').src='images/crew/crew_black.jpg';document.getElementById('crewColor').innerText='Black'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: blue; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeCrew').src='images/crew/crew_blue.jpg';document.getElementById('crewColor').innerText='Blue'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: grey; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeCrew').src='images/crew/crew_grey.jpg';document.getElementById('crewColor').innerText='Grey'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: #6F1ED0; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeCrew').src='images/crew/crew_purple.jpg';document.getElementById('crewColor').innerText='Purple'"></span>
+	</div>
+	<!--Options for Clothing-->
+	<form action="/action_page.php">
+	<p>Selected: <span id="crewColor" style="font-weight: bold;">Black</span></p>
+	<label for="crewQuantity">Quantity:</label>
+	<select id="crewQuantity" name="crewQuantity">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label for="crewSize">Size:</label>
+	<select id="crewSize" name="crewSize">
+		<option value="Small">Small</option>
+		<option value="Medium">Medium</option>
+		<option value="Large">Large</option>
+	</select>
+	</form> 
+	<!--Price of clothing-->
+	<p id="crewPrice" style="color: grey;font-size: 22px;">$30.00/per</p>
+	<!--Description and Submitting-->
+	<p>Crew Necks are 50/50 preshrunk cotton/polyester.</p>
+	<p><button type="button" onclick="addToCart(crewQuantity, crewSize, crewPrice, crewColor, imgChangeCrew)">Add to Cart</button></p>
+	</div>
+</div>
+
+<!-- Hooded Sweaters-->
+<div id="cloth5" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<h1 style="text-align: center;">Hooded Sweaters</h1>
+	<!--Card-->
+	<div class="card">
+	<img id="imgChangeHood" src="images\hood\hood_black.jpg" alt="Hooded Sweater" style="width:100%">
+	<!--Colours Avaiable-->
+	<div class="divColor">
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: black; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeHood').src='images/hood/hood_black.jpg';document.getElementById('hoodColor').innerText='Black'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: blue; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeHood').src='images/hood/hood_blue.jpg';document.getElementById('hoodColor').innerText='Blue'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: grey; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeHood').src='images/hood/hood_grey.jpg';document.getElementById('hoodColor').innerText='Grey'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: #6F1ED0; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeHood').src='images/hood/hood_purple.jpg';document.getElementById('hoodColor').innerText='Purple'"></span>
+	</div>
+	<!--Options for Clothing-->
+	<form action="/action_page.php">
+	<p>Selected: <span id="hoodColor" style="font-weight: bold;">Black</span></p>
+	<label for="hoodQuantity">Quantity:</label>
+	<select id="hoodQuantity" name="hoodQuantity">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label for="hoodSize">Size:</label>
+	<select id="hoodSize" name="hoodSize">
+		<option value="Small">Small</option>
+		<option value="Medium">Medium</option>
+		<option value="Large">Large</option>
+	</select>
+	</form> 
+	<!--Price of clothing-->
+	<p id="hoodPrice" style="color: grey;font-size: 22px;">$40.00/per</p>
+	<!--Description and Submitting-->
+	<p>Hooded Sweaters are 50/50 preshrunk cotton/polyester.</p>
+	<p><button type="button" onclick="addToCart(hoodQuantity, hoodSize, hoodPrice, hoodColor, imgChangeHood)">Add to Cart</button></p>
+	</div>
+</div>
+
+<!-- Half Zip Sweaters-->
+<div id="cloth6" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<h1 style="text-align: center;">Half Zip Sweaters</h1>
+	<!--Card-->
+	<div class="card">
+	<img id="imgChangeHzip" src="images\hzip\h_zip_black.jpg" alt="Half Zip Sweater" style="width:100%">
+	<!--Colours Avaiable-->
+	<div class="divColor">
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: black; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeHzip').src='images/hzip/h_zip_black.jpg';document.getElementById('hzipColor').innerText='Black'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: blue; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeHzip').src='images/hzip/h_zip_blue.jpg';document.getElementById('hzipColor').innerText='Blue'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: grey; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeHzip').src='images/hzip/h_zip_grey.jpg';document.getElementById('hzipColor').innerText='Grey'"></span>
+	</div>
+	<!--Options for Clothing-->
+	<form action="/action_page.php">
+	<p>Selected: <span id="hzipColor" style="font-weight: bold;">Black</span></p>
+	<label for="hzipQuantity">Quantity:</label>
+	<select id="hzipQuantity" name="hzipQuantity">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label for="hzipSize">Size:</label>
+	<select id="hzipSize" name="hzipSize">
+		<option value="Small">Small</option>
+		<option value="Medium">Medium</option>
+		<option value="Large">Large</option>
+	</select>
+	</form> 
+	<!--Price of clothing-->
+	<p id="hzipPrice" style="color: grey;font-size: 22px;">$40.00/per</p>
+	<!--Description and Submitting-->
+	<p>Half Zip Sweaters are 50/50 preshrunk cotton/polyester.</p>
+	<p><button type="button" onclick="addToCart(hzipQuantity, hzipSize, hzipPrice, hzipColor, imgChangeHzip)">Add to Cart</button></p>
+	</div>
+</div>
+
+<!-- Full Zip Hooded Sweaters-->
+<div id="cloth7" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<h1 style="text-align: center;">Full Zip Hooded Sweaters</h1>
+	<!--Card-->
+	<div class="card">
+	<img id="imgChangeFzip" src="images\fzip\f_zip_black.jpg" alt="Full Zip Hooded Sweater" style="width:100%">
+	<!--Colours Avaiable-->
+	<div class="divColor">
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: black; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeFzip').src='images/fzip/f_zip_black.jpg';document.getElementById('fzipColor').innerText='Black'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: blue; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeFzip').src='images/fzip/f_zip_blue.jpg';document.getElementById('fzipColor').innerText='Blue'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: grey; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeFzip').src='images/fzip/f_zip_grey.jpg';document.getElementById('fzipColor').innerText='Grey'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: #6F1ED0; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeFzip').src='images/fzip/f_zip_purple.jpg';document.getElementById('fzipColor').innerText='purple'"></span>
+	</div>
+	<!--Options for Clothing-->
+	<form action="/action_page.php">
+	<p>Selected: <span id="fzipColor" style="font-weight: bold;">Black</span></p>
+	<label for="fzipQuantity">Quantity:</label>
+	<select id="fzipQuantity" name="fzipQuantity">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label for="fzipSize">Size:</label>
+	<select id="fzipSize" name="fzipSize">
+		<option value="Small">Small</option>
+		<option value="Medium">Medium</option>
+		<option value="Large">Large</option>
+	</select>
+	</form> 
+	<!--Price of clothing-->
+	<p id="fzipPrice" style="color: grey;font-size: 22px;">$45.00/per</p>
+	<!--Description and Submitting-->
+	<p>Full Zip Hooded Sweaters are 50/50 preshrunk cotton/polyester.</p>
+	<p><button type="button" onclick="addToCart(fzipQuantity, fzipSize, fzipPrice, fzipColor, imgChangeFzip)">Add to Cart</button></p>
+	</div>
+</div>
+
+<!-- Woman's Full Zip Hooded Sweaters-->
+<div id="cloth8" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<h1 style="text-align: center;">Woman's Full Zip Hooded Sweaters</h1>
+	<!--Card-->
+	<div class="card">
+	<img id="imgChangeWFzip" src="images\wfzip\wf_zip_black.jpg" alt="Woman's Full Zip Hooded Sweater" style="width:100%">
+	<!--Colours Avaiable-->
+	<div class="divColor">
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: black; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeWFzip').src='images/wfzip/wf_zip_black.jpg';document.getElementById('wfzipColor').innerText='Black'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: blue; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeWFzip').src='images/wfzip/wf_zip_blue.jpg';document.getElementById('wfzipColor').innerText='Blue'"></span>
+	<span id="spanColor" style="height: 35px; width: 35px; background-color: grey; border-radius: 50%; display: inline-block; margin-left:15px;" onclick="document.getElementById('imgChangeWFzip').src='images/wfzip/wf_zip_grey.jpg';document.getElementById('wfzipColor').innerText='Grey'"></span>
+	</div>
+	<!--Options for Clothing-->
+	<form action="/action_page.php">
+	<p>Selected: <span id="wfzipColor" style="font-weight: bold;">Black</span></p>
+	<label for="wfzipQuantity">Quantity:</label>
+	<select id="wfzipQuantity" name="wfzipQuantity">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label for="wfzipSize">Size:</label>
+	<select id="wfzipSize" name="wfzipSize">
+		<option value="Small">Small</option>
+		<option value="Medium">Medium</option>
+		<option value="Large">Large</option>
+	</select>
+	</form> 
+	<!--Price of clothing-->
+	<p id="wfzipPrice" style="color: grey;font-size: 22px;">$45.00/per</p>
+	<!--Description and Submitting-->
+	<p>Woman Full Zip Hooded Sweaters are 75/25 preshrunk combed ringspun cotton/polyester fleece.</p>
+	<p><button type="button" onclick="addToCart(wfzipQuantity, wfzipSize, wfzipPrice, wfzipColor, imgChangeWFzip)">Add to Cart</button></p>
+	</div>
+</div>
+
+<div id="contactus" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+		<h1> Contact Us / Issues </h1></div>
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+		<h3> If you did not receive an email with your order confirmation within 24 hours, please contact (SJHC Employee):</h3>
+	</div>
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+		<h3> (SJHCPharmacyEmail.ca) </h3>
+	</div>
+	<div class="footer">
+		<p>Thank you for using SJHC Pharmacy Wear</p>
+	</div>
+</div>
+
+
+<!--Shopping Cart-->
+<div id="shopcart" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+	<h1>Your Order:</h1>
+	</div>
+	<!--<div id="container"/>-->
+	<div class="row">
+		<div class="col-25">
+			<div class="container">
+			<h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b id="qty">0</b></span></h4>
+			<!--<div><p><a href="#">Product 1</a> <span class="price">$15</span></p><div>
+			<p><a href="#">Product 2</a> <span class="price">$5</span></p>
+			<p><a href="#">Product 3</a> <span class="price">$8</span></p>
+			<p><a href="#">Product 4</a> <span class="price">$2</span></p>-->
+			<div id="productq"></div>
+			<hr>
+			<p>Total <span class="price" style="color:black"><b id="totalCartPrice">$0</b></span></p>
+			<hr>
+			<div style="display:flex; align-items: center; justify-content: center; margin: 5px;"> 
+				<p>*Please enter your contact information to check out. An invoice will be sent to the email provided.</p><br>
+			</div>
+			<div style="display:flex; align-items: center; justify-content: center; margin-top: -20px;"> 
+				<p>*(Kindly check your Junk mail if you have not received an invoice or contact us)</p><br>
+			</div>
+			<div style="display:flex; align-items: center; justify-content: center; margin: 5px;">
+			<form id="customerForm" onsubmit="return submitShopCart()" method="post">
+				<label for="customerName"><i class="fa fa-user"></i> Full Name: </label>
+				<input type="text" id="customerName" name="custName" placeholder="John M. Doe"><br><br>
+				<label for="customerEmail"><i class="fa fa-envelope"></i> Email: </label>
+				<input type="email" id="customerEmail" name="custEmail" placeholder="john@example.com">
+			</form>
+			</div><button id="submitCart" onclick="submitShopCart();">Checkout</button></div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>Thank you for using SJHC Pharmacy Wear</p>
+	</div>
+</div>
+
+<div id="submitShopCart" style="transition: margin-left .5s; padding: 16px; display: none;">
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+		<h1> Thank you! </h1>
+	</div>
+	<div style="display:flex; align-items: center; justify-content: center;"> 
+		<p>Your order has been recieved and an invoice will be sent to your email soon.</p>
+	</div>
+</div>
+
+
+<script src="myscript.js"></script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script
+	type="text/javascript"
+	src='https://apis.google.com/js/api.js'
+	async
+	defer
+	crossOrigin="anonymous"
+	onload="this.onload=function(){};"
+	onreadystatechange="if (this.readyState === 'complete' this.onload()">
+</script>
+
+
+</body>
+</html> 
