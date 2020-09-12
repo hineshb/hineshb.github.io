@@ -26,7 +26,7 @@
 
   </head>
 
-  <body id="page-top" onload="onload()" ng-app="app" ng-controller="infoCtrl">
+  <body id="page-top" onload="onload()">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -126,39 +126,39 @@
             <p>Feel free to checkout some of my projects</p>
 			<ul class="list-inline banner-social-buttons">
               <li class="list-inline-item">
-                <a href="#projectscroll" onclick="showproject1();" class="btn btn-default btn-lg js-scroll-trigger">
+                <a href="#projectscroll" onclick="showHide('project1');" class="btn btn-default btn-lg js-scroll-trigger">
                   <span class="network-name">Alarm Clock</span>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#projectscroll" onclick="showproject2();" class="btn btn-default btn-lg js-scroll-trigger">
+                <a href="#projectscroll" onclick="showHide('project2');" class="btn btn-default btn-lg js-scroll-trigger">
                   <span class="network-name">Image Stitching</span>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="#projectscroll" onclick="showproject3();" class="btn btn-default btn-lg js-scroll-trigger">
+                <a href="#projectscroll" onclick="showHide('project3');" class="btn btn-default btn-lg js-scroll-trigger">
                   <span class="network-name">Interactive World</span>
                 </a>
               </li>
 			  <li class="list-inline-item">
-                <a href="project/weatherapp/index.html" target="_blank" onclick="showproject4();" class="btn btn-default btn-lg js-scroll-trigger">
+                <a href="project/weatherapp/index.html" target="_blank" onclick="" class="btn btn-default btn-lg js-scroll-trigger">
                   <span class="network-name">Weather App</span>
                 </a>
               </li>
 			  <li class="list-inline-item">
-                <a href="#projectscroll" onclick="showproject5();" class="btn btn-default btn-lg js-scroll-trigger">
+                <a href="#projectscroll" onclick="showHide('project5');" class="btn btn-default btn-lg js-scroll-trigger">
                   <span class="network-name">SD Designs</span>
                 </a>
               </li>
             </ul>
 			<ul class="list-inline banner-social-buttons">
 				<li class="list-inline-item">
-					<a href="#projectscroll" onclick="showproject6();" class="btn btn-default btn-lg js-scroll-trigger">
+					<a href="#projectscroll" onclick="showHide('project6');" class="btn btn-default btn-lg js-scroll-trigger">
 					  <span class="network-name">OMS CheatSheet</span>
 					</a>
 				</li>
 				<li class="list-inline-item">
-					<a href="project/sjhcpharmacy/index.html" target="_blank" onclick="showproject7();" class="btn btn-default btn-lg js-scroll-trigger">
+					<a href="project/sjhcpharmacy/index.html" target="_blank" onclick="" class="btn btn-default btn-lg js-scroll-trigger">
 					  <span class="network-name">SJHC Pharmacy Wear</span>
 					</a>
 				  </li>
@@ -207,11 +207,6 @@
 					<img id="pro3" src="project/opengl/opengl7-raise.PNG" alt="interactiveprogram">
 				</div>
 			</div>
-			</div>
-			<div id="project4" style="display:none;">
-				<!--<p>Weather App</p>
-				<div class=swipe>
-				</div>-->
 			</div>
 			<div id="project5" style="display:none;">
 			<div id="proj5width" class="col-lg-8 mx-auto"><!--style="width:433px;"-->
@@ -300,7 +295,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>-->
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
@@ -353,134 +348,34 @@ app.filter('highlight', function($sce) {
 </script>
 <!--Hide Elements Script-->
 <script>
-function showproject1() {
-    var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-    a.style.display = "block";
-	b.style.display = "none";
-	c.style.display = "none";
-	d.style.display = "none";
-	e.style.display = "none";
-	f.style.display = "block";
-	g.style.display = "none";
-	
-}
-function showproject2() {
-    var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-    a.style.display = "none";
-	b.style.display = "block";
-	c.style.display = "none";
-	d.style.display = "none";
-	e.style.display = "none";
-	f.style.display = "block";
-	g.style.display = "none";
-}
-function showproject3() {
-    var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-    a.style.display = "none";
-	b.style.display = "none";
-	c.style.display = "block";
-	d.style.display = "none";
-	e.style.display = "none";
-	f.style.display = "block";
-	g.style.display = "none";
-}
-function showproject4() {
-    var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-    a.style.display = "none";
-	b.style.display = "none";
-	c.style.display = "none";
-	d.style.display = "none";
-	e.style.display = "none";
-	f.style.display = "none";
-	g.style.display = "none";
-}
-function showproject5() {
-    var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-    a.style.display = "none";
-	b.style.display = "none";
-	c.style.display = "none";
-	d.style.display = "none";
-	e.style.display = "block";
-	f.style.display = "block";
-	g.style.display = "none";
-}
-function showproject6() {
-    var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-    a.style.display = "none";
-	b.style.display = "none";
-	c.style.display = "none";
-	d.style.display = "none";
-	e.style.display = "none";
-	f.style.display = "block";
-	g.style.display = "block";
-}
-function showproject7() {
-    var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-    a.style.display = "none";
-	b.style.display = "none";
-	c.style.display = "none";
-	d.style.display = "none";
-	e.style.display = "none";
-	f.style.display = "none";
-	g.style.display = "none";
-}
+
+function showHide(d)
+{
+	var onediv = document.getElementById(d);
+	var hidebtn = document.getElementById("hideproject");
+	var divs=['project1','project2','project3','project5','project6']; // project4 and project7 are websites
+	for (var i=0;i<divs.length;i++)
+	{
+	  if (onediv != document.getElementById(divs[i]))
+		{
+		document.getElementById(divs[i]).style.display='none';
+		}
+	}
+	onediv.style.display = 'block';
+	hidebtn.style.display = 'block';
+} 
+
 function hide(){
-	var a = document.getElementById("project1");
-	var b = document.getElementById("project2");
-	var c = document.getElementById("project3");
-	var d = document.getElementById("project4");
-	var e = document.getElementById("project5");
-	var f = document.getElementById("hideproject");
-	var g = document.getElementById("project6");
-	a.style.display = "none";
-	b.style.display = "none";
-	c.style.display = "none";
-	d.style.display = "none";
-	e.style.display = "none";
-	f.style.display = "none";
-	g.style.display = "none";
+	var divs=['project1','project2','project3','project5','project6']; // project4 and project7 are websites
+	var hidebtn = document.getElementById("hideproject");
+	for (var i=0;i<divs.length;i++)
+	{
+	  if (document.getElementById(divs[i]))
+		{
+			document.getElementById(divs[i]).style.display='none';
+		}
+	}
+	hidebtn.style.display = 'none';
 }
 function hideresume() {
     var x = document.getElementById("hideresume");

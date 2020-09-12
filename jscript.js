@@ -21,7 +21,7 @@ function openTab(evt, tabName) {
 }
 
 function onload(){
-	document.getElementById("defaultOpen").click();
+	//document.getElementById("defaultOpen").click();
 }
 
 
