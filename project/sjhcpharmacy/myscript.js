@@ -159,11 +159,12 @@ function submitShopCart(){
 	}
 	document.getElementById("submitCart").disabled = true;
 	document.getElementById("submitCart").textContent = "Sending Please Wait...";
-	sendEmail();
-	//window.open("submit.html", "_self");
+	//sendEmail();
+	alert("This is a test site so no email is sent. Thank you for viewing this demo");
+	window.open("submit.html", "_self");
 }
-
-function sendEmail(){
+//function that is used to send emails disabled.
+/*function sendEmail(){
 	Email.send({
 	SecureToken : "5e7b6116-e9bf-4e64-b9a5-bfac7835bd9b",
 	To : emailTo,
@@ -173,7 +174,7 @@ function sendEmail(){
 	}).then(
 		message => window.open("submit.html", "_self")
 	);
-}
+}*/
 
 function testCart(){
 	//console.log("test");
