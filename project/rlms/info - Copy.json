@@ -1,0 +1,44 @@
+[{
+    "ttag": "T01516746",
+    "name": "Apple Watch SE MYDN2VC/A 40mm Rose Gold",
+    "sku": "2508799",
+    "skid": "S123456",
+    "location": "501 01 01",
+	"status": "To be Photographed",
+    "shipdate": "N/A",
+    "lastupdate": "2021/08/12 07:29",
+    "grade": "A",
+    "image": "",
+    "specs": {
+        "motherboard": "some mb",
+        "ram": "some ram",
+        "harddrive": "some hdd",
+        "screensize": "size"
+    }
+},
+{
+    "ttag": "T02222222",
+    "sku": "222222",
+    "skid": "S123456",
+    "location": "101 01 111",
+	"status": "created",
+    "specs": {
+        "motherboard": "some mb",
+        "ram": "some ram",
+        "harddrive": "some hdd",
+        "screensize": "size"
+    }
+},
+{
+    "ttag": "T03333333",
+    "sku": "333333",
+    "skid": "S678910",
+    "location": "202 02 222",
+	"status": "created",
+    "specs": {
+        "motherboard": "some mb",
+        "ram": "some ram",
+        "harddrive": "some hdd",
+        "screensize": "size"
+    }
+}]

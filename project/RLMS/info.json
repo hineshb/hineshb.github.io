@@ -1,9 +1,14 @@
 [{
-    "ttag": "T01111111",
-    "sku": "222222",
+    "ttag": "T01023156",
+    "name": "Apple Watch SE MYDN2VC/A 40mm Rose Gold",
+    "sku": "2508799",
     "skid": "S123456",
-    "location": "101 01 111",
-	"status": "created",
+    "location": "501 01 01",
+	"status": "To be Photographed",
+    "shipdate": "N/A",
+    "lastupdate": "2021/08/12 07:29",
+    "grade": "A",
+    "image": "",
     "specs": {
         "motherboard": "some mb",
         "ram": "some ram",
@@ -12,11 +17,16 @@
     }
 },
 {
-    "ttag": "T02222222",
-    "sku": "222222",
+    "ttag": "T01331547",
+    "name": "Apple Watch Nike+ Series 3 MTGW2CL/A 42mm White",
+    "sku": "2946512",
     "skid": "S123456",
-    "location": "101 01 111",
-	"status": "created",
+    "location": "501 01 01",
+	"status": "Diagnostic",
+    "shipdate": "N/A",
+    "lastupdate": "2021/07/13 12:46",
+    "grade": "B",
+    "image": "",
     "specs": {
         "motherboard": "some mb",
         "ram": "some ram",
@@ -25,11 +35,70 @@
     }
 },
 {
-    "ttag": "T03333333",
-    "sku": "333333",
-    "skid": "S678910",
-    "location": "202 02 222",
-	"status": "created",
+    "ttag": "T01402946",
+    "name": "Apple Watch S6 44mm M00J3VC/A Blue",
+    "sku": "2912198",
+    "skid": "S123456",
+    "location": "501 01 01",
+	"status": "Diagnostic",
+    "shipdate": "N/A",
+    "lastupdate": "2021/07/11 15:02",
+    "grade": "B",
+    "image": "",
+    "specs": {
+        "motherboard": "some mb",
+        "ram": "some ram",
+        "harddrive": "some hdd",
+        "screensize": "size"
+    }
+},
+{
+    "ttag": "T01023156",
+    "name": "Apple Watch Series 4 MTUN2VC/A 40mm Space Gray",
+    "sku": "2946512",
+    "skid": "S123456",
+    "location": "501 01 01",
+	"status": "To be Shipped",
+    "shipdate": "N/A",
+    "lastupdate": "2021/06/30 10:09",
+    "grade": "As Is",
+    "image": "",
+    "specs": {
+        "motherboard": "some mb",
+        "ram": "some ram",
+        "harddrive": "some hdd",
+        "screensize": "size"
+    }
+},
+{
+    "ttag": "T01615100",
+    "name": "Apple Watch Nike Series 5 MX372VC/A 40 mm Gold",
+    "sku": "2978047",
+    "skid": "S123456",
+    "location": "501 01 01",
+	"status": "Shipped",
+    "shipdate": "2020/06/25 11:56",
+    "lastupdate": "2020/06/25 11:56",
+    "grade": "A",
+    "image": "",
+    "specs": {
+        "motherboard": "some mb",
+        "ram": "some ram",
+        "harddrive": "some hdd",
+        "screensize": "size"
+    }
+},
+{
+    "ttag": "T01654654",
+    "name": "Apple Watch Series 5 MWV82VC/A 40mm Space Gray",
+    "sku": "2912214",
+    "skid": "S123456",
+    "location": "501 01 01",
+	"status": "Shipped",
+    "shipdate": "2020/06/16 13:07",
+    "lastupdate": "2020/06/16 13:07",
+    "grade": "C",
+    "image": "",
     "specs": {
         "motherboard": "some mb",
         "ram": "some ram",
