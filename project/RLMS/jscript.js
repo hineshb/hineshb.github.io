@@ -33,9 +33,12 @@ function loaddata(){
         //td.style.textAlign = 'center';
         tr.setAttribute('id', info[i].ttag);
         tag.innerText = info[i].ttag;
+        name.setAttribute('id', info[i].name);
         name.innerText = info[i].name;
+        sku.setAttribute('id', info[i].sku);
         sku.innerText = info[i].sku;
         //skid.innerText = info[i].skid;
+        location.setAttribute('id', info[i].location);
         location.innerText = info[i].location;
         status.innerText = info[i].status;
         shipdate.innerText = info[i].shipdate;
@@ -65,13 +68,14 @@ function loaddata(){
 window.onload = loaddata();
 const tag = new RegExp('^[Tt][0-9]{8}$')
 const skid = new RegExp('^[Ss][0-9]{6}$');
-const sku = new RegExp('^[0-9]{8}$');
+const sku = new RegExp('^[0-9]{7}$');
 //const loca = new RegExp('^([0-9]{3})\s([0-9]{2})\s([0-9]{3})$');
 //const loca = new RegExp('^[0-9]{3}\s[0-9]{2}\s[0-9]{3}$');
 //const loca = new RegExp('^\d{3}\s+\d{2}\s+\d{3}$');
 const loca = new RegExp('^[0-9]{3}-[0-9]{2}-[0-9]{2}$');
 
-var searchOpts = ["SKU", "TAG", "SKID", "Location", "Name"];
+var searchOpts = ["TAG", "SKU", "SKID", "Location", "Name"];
+var searchOpts2 = [];
 
 function search(){
     var str = document.getElementById("input").value;
@@ -87,44 +91,10 @@ function search(){
 
 function sortSearch(str){
     //console.log(globalsearch);
-    if(sku.test(str)){
-        //alert("sku");
-        if(searchOpts[0].match("SKU")){
-            searchOpts[0] = str;
-
-            //create elements
-            var p = document.createElement("p");
-            var string = document.createElement("span");
-            var spacer = document.createElement("span");
-            var span = document.createElement("span");
-            var div = document.getElementById("searchResultHold");
-            var closebtn = '\u2715';
-
-            //set values and attributes
-            p.classList.add("searchresult");
-            //p.innerText = "SKU: " + str + "\xa0"+"\xa0";
-            p.innerText = "SKU: ";
-            string.setAttribute('id','replaceSKU');
-            string.innerText = str;
-            spacer.innerText = "\xa0"+"\xa0"
-            span.setAttribute('id','closeSearchOpt');
-            span.innerText=closebtn;
-            span.onclick = function() {deleteSearch(this)};
-
-            //add to div
-            p.appendChild(string);
-            p.appendChild(spacer);
-            p.appendChild(span);
-            div.appendChild(p);
-        }else if(!searchOpts[0].match("SKU")){
-            searchOpts[0] = str;
-            var replaceSearch = document.getElementById("replaceSKU");
-            replaceSearch.innerText=str;
-        }
-    } else if(tag.test(str)){
+    if(tag.test(str)){
         //alert("tag");
-        if(searchOpts[1].match("TAG")){
-            searchOpts[1] = str;
+        if(searchOpts[0].match("TAG")){
+            searchOpts[0] = str;
 
             //create elements
             var p = document.createElement("p");
@@ -150,13 +120,51 @@ function sortSearch(str){
             p.appendChild(spacer);
             p.appendChild(span);
             div.appendChild(p);
-        }else if(!searchOpts[1].match("TAG")){
-            searchOpts[1] = str;
+        }else if(!searchOpts[0].match("TAG")){
+            searchOpts[0] = str;
             var replaceSearch = document.getElementById("replaceTAG");
             replaceSearch.innerText=str;
         }
         console.log(searchOpts);
+        runSearchTag();
+    } else if(sku.test(str)){
+        //alert("sku");
+        if(searchOpts[1].match("SKU")){
+            searchOpts[1] = str;
+
+            //create elements
+            var p = document.createElement("p");
+            var string = document.createElement("span");
+            var spacer = document.createElement("span");
+            var span = document.createElement("span");
+            var div = document.getElementById("searchResultHold");
+            var closebtn = '\u2715';
+
+            //set values and attributes
+            p.classList.add("searchresult");
+            //p.innerText = "SKU: " + str + "\xa0"+"\xa0";
+            p.innerText = "SKU: ";
+            string.setAttribute('id','replaceSKU');
+            string.innerText = str;
+            spacer.innerText = "\xa0"+"\xa0"
+            span.setAttribute('id','closeSearchOpt');
+            span.innerText=closebtn;
+            span.onclick = function() {deleteSearch(this)};
+
+            //add to div
+            p.appendChild(string);
+            p.appendChild(spacer);
+            p.appendChild(span);
+            div.appendChild(p);
+        }else if(!searchOpts[1].match("SKU")){
+            searchOpts[1] = str;
+            var replaceSearch = document.getElementById("replaceSKU");
+            replaceSearch.innerText=str;
+        }
+        searchOpts2.push(str);
         runSearch();
+        console.log(searchOpts);
+        console.log("opt2:" + searchOpts2);
     }else if(skid.test(str)){
         //alert("skid");
         if(searchOpts[2].match("SKID")){
@@ -191,7 +199,10 @@ function sortSearch(str){
             var replaceSearch = document.getElementById("replaceSKID");
             replaceSearch.innerText=str;
         }
+        searchOpts2.push(str);
+        runSearch();
         console.log(searchOpts);
+        console.log("opt2:" + searchOpts2);
     }else if(loca.test(str)){
         //alert("location");
         if(searchOpts[3].match("Location")){
@@ -226,7 +237,10 @@ function sortSearch(str){
             var replaceSearch = document.getElementById("replaceLocation");
             replaceSearch.innerText=str;
         }
+        searchOpts2.push(str);
+        runSearch();
         console.log(searchOpts);
+        console.log("opt2:" + searchOpts2);
     }else{
         if(searchOpts[4].match("Name")){
             searchOpts[4] = str;
@@ -260,143 +274,461 @@ function sortSearch(str){
             var replaceSearch = document.getElementById("replaceName");
             replaceSearch.innerText=str;
         }
+        searchOpts2.push(str);
+        runSearch();
         console.log(searchOpts);
+        console.log("opt2:" + searchOpts2);
     }
 }
 
-function runSearch(str){  
-    var item = document.getElementById(str);
-    //delete tablebody
-    document.getElementById("dataTableBody").remove();
+function runSearchTag(){  
+    //delete elements in tablebody
+    var node = document.getElementById("dataTableBody");
+    while (node.firstChild) {
+        node.removeChild(node.firstChild);
+    }
+    node.style.height = "calc( 100vh - 270px )";
+
+    fetch('info.json')
+   .then(res => res.json())
+   .then(function(data){
+
+    info = data; 
+    console.log(info[1].ttag);
+    console.log(info.length);
+
     //create tablebody
-    var table = document.getElementById("dataTable");
-    var tableBody = document.createElement("tbody");
-    tableBody.setAttribute('id', "dataTableBody");
+    //var table = document.getElementById("dataTable");
+    var tableBody = document.getElementById("dataTableBody");
+    //tableBody.setAttribute('id', "dataTableBody");
 
-    console.log(searchOpts);
+    var i = 0;
+    while(i < info.length) {
+        if(searchOpts[0] != "TAG"){
+            if(searchOpts[0] == info[i].ttag){
+                //create elements
+                var tr = document.createElement("tr");
+                var tag = document.createElement("td");
+                var name = document.createElement("td");
+                var sku = document.createElement("td");
+                //var skid = document.createElement("td");
+                var location = document.createElement("td");
+                var status = document.createElement("td");
+                var shipdate = document.createElement("td");
+                var lastupdate = document.createElement("td");
+                var grade = document.createElement("td");
+                var image = document.createElement("td");
 
+                //set values and attributes
+                //td.style.textAlign = 'center';
+                tr.setAttribute('id', info[i].ttag);
+                tag.innerText = info[i].ttag;
+                name.setAttribute('id', info[i].name);
+                name.innerText = info[i].name;
+                sku.setAttribute('id', info[i].sku);
+                sku.innerText = info[i].sku;
+                //skid.innerText = info[i].skid;
+                location.setAttribute('id', info[i].location);
+                location.innerText = info[i].location;
+                status.innerText = info[i].status;
+                shipdate.innerText = info[i].shipdate;
+                lastupdate.innerText = info[i].lastupdate;
+                grade.innerText = info[i].grade;
+                image.innerText = "image";//to be changed
+                tag.onclick = function() {TBD(this)};
+
+                //add to table
+                tr.appendChild(tag);
+                tr.appendChild(name);
+                tr.appendChild(sku);
+                //tr.appendChild(skid);
+                tr.appendChild(location);
+                tr.appendChild(status);
+                tr.appendChild(shipdate);
+                tr.appendChild(lastupdate);
+                tr.appendChild(grade);
+                tr.appendChild(image);
+                console.log(tableBody);
+                tableBody.appendChild(tr);
+            }
+        i++;
+        }
+    }
+    });
+
+}
+
+function runSearch(){  
+    //delete tablebody
+    //document.getElementById("dataTableBody").style.visibility = "hidden";
+    //create tablebody
+    //var table = document.getElementById("dataTable");
+    //var tableBody = document.createElement("tbody");
+    //tableBody.setAttribute('id', "dataTableBody");
+    //delete elements in tablebody
+    var tableBody = document.getElementById("dataTableBody");
+    var node = document.getElementById("dataTableBody");
+    while (node.firstChild) {
+        node.removeChild(node.firstChild);
+    }
+    node.style.height = "calc( 100vh - 250px )";
+
+    
     //read json file
     fetch('info.json')
     .then(res => res.json())
     .then(function(data){
     //console.log(data.length)
     //console.log(document.getElementById("input").value)
+    
      info = data; 
-     console.log(info[1].ttag);
-     console.log(info.length);
-     var i = 0;
-     while(i < info.length) {
-        /*if(searchOpts[0] == info[i].sku && searchOpts[1] == info[i].ttag && searchOpts[2] == info[i].skid && searchOpts[3] == info[i].location && searchOpts[4] == info[i].name){
-            console.log("all five");
-        }else if(searchOpts[0] == info[i].sku){
-            console.log("searched sku match");
-        }
-        else if(searchOpts[1] == info[i].ttag){
-            console.log("searched sku match");
-        }
-        else if(searchOpts[2] == info[i].skid){
-            console.log("searched sku match");
-        }
-        else if(searchOpts[3] == info[i].location){
-            console.log("searched sku match");
-        }
-        else if(searchOpts[2] == info[i].name){
-            console.log("searched sku match");
-        }*/
-        if(searchOpts[1] == info[i].ttag){
-            console.log(info[i].ttag + " at " + i);
-        //create elements
-         var tr = document.createElement("tr");
-         var tag = document.createElement("td");
-         var name = document.createElement("td");
-         var sku = document.createElement("td");
-         //var skid = document.createElement("td");
-         var location = document.createElement("td");
-         var status = document.createElement("td");
-         var shipdate = document.createElement("td");
-         var lastupdate = document.createElement("td");
-         var grade = document.createElement("td");
-         var image = document.createElement("td");
-         
- 
-         //set values and attributes
-         //td.style.textAlign = 'center';
-         tr.setAttribute('id', info[i].ttag);
-         tag.innerText = info[i].ttag;
-         name.innerText = info[i].name;
-         sku.innerText = info[i].sku;
-         //skid.innerText = info[i].skid;
-         location.innerText = info[i].location;
-         status.innerText = info[i].status;
-         shipdate.innerText = info[i].shipdate;
-         lastupdate.innerText = info[i].lastupdate;
-         grade.innerText = info[i].grade;
-         image.innerText = "image";//to be changed
-         tag.onclick = function() {TBD(this)};
- 
-         //add to table
-         tr.appendChild(tag);
-         tr.appendChild(name);
-         tr.appendChild(sku);
-         //tr.appendChild(skid);
-         tr.appendChild(location);
-         tr.appendChild(status);
-         tr.appendChild(shipdate);
-         tr.appendChild(lastupdate);
-         tr.appendChild(grade);
-         tr.appendChild(image);
-         tableBody.appendChild(tr);
-         table.appendChild(tableBody);
-        }
-        i++;
-     }
+     //console.log(info[1].SKU);
 
-     /*
-     //create elements
-         var tr = document.createElement("tr");
-         var tag = document.createElement("td");
-         var name = document.createElement("td");
-         var sku = document.createElement("td");
-         var skid = document.createElement("td");
-         var location = document.createElement("td");
-         var status = document.createElement("td");
-         var shipdate = document.createElement("td");
-         var lastupdate = document.createElement("td");
-         var grade = document.createElement("td");
-         var image = document.createElement("td");
- 
-         //set values and attributes
-         //td.style.textAlign = 'center';
-         tr.setAttribute('id', info[i].ttag);
-         tag.innerText = info[i].ttag;
-         name.innerText = info[i].name;
-         sku.innerText = info[i].sku;
-         skid.innerText = info[i].skid;
-         location.innerText = info[i].location;
-         status.innerText = info[i].status;
-         shipdate.innerText = info[i].shipdate;
-         lastupdate.innerText = info[i].lastupdate;
-         grade.innerText = info[i].grade;
-         image.innerText = "image";//to be changed
-         tag.onclick = function() {TBD(this)};
- 
-         //add to table
-         tr.appendChild(tag);
-         tr.appendChild(name);
-         tr.appendChild(sku);
-         tr.appendChild(skid);
-         tr.appendChild(location);
-         tr.appendChild(status);
-         tr.appendChild(shipdate);
-         tr.appendChild(lastupdate);
-         tr.appendChild(grade);
-         tr.appendChild(image);
-         
-         tableBody.appendChild(tr);
-         table.appendChild(tableBody);
-         */
+    //create tablebody
+    //var table = document.getElementById("dataTable");
+
+    //tableBody.setAttribute('id', "dataTableBody");
+    console.log(searchOpts[1]!=("SKU"));
+    console.log(searchOpts[3]!=("Location"));
+    console.log(searchOpts[4]!=("Name"));
+
+        if(searchOpts[1]!=("SKU") && searchOpts[3]!=("Location") && searchOpts[4]!=("Name")){
+            for(var i=0; i<info.length;i++){
+                if(searchOpts[1] === info[i].sku && searchOpts[3] === info[i].location && info[i].name.toLowerCase().includes(searchOpts[4].toLowerCase())){
+                        var tr = document.createElement("tr");
+                        var tag = document.createElement("td");
+                        var name = document.createElement("td");
+                        var sku = document.createElement("td");
+                        //var skid = document.createElement("td");
+                        var location = document.createElement("td");
+                        var status = document.createElement("td");
+                        var shipdate = document.createElement("td");
+                        var lastupdate = document.createElement("td");
+                        var grade = document.createElement("td");
+                        var image = document.createElement("td");
+
+                        //set values and attributes
+                        tr.setAttribute('id', info[i].ttag);
+                        tag.innerText = info[i].ttag;
+                        name.setAttribute('id', info[i].name);
+                        name.innerText = info[i].name;
+                        sku.setAttribute('id', info[i].sku);
+                        sku.innerText = info[i].sku;
+                        //skid.innerText = info[i].skid;
+                        location.setAttribute('id', info[i].location);
+                        location.innerText = info[i].location;
+                        status.innerText = info[i].status;
+                        shipdate.innerText = info[i].shipdate;
+                        lastupdate.innerText = info[i].lastupdate;
+                        grade.innerText = info[i].grade;
+                        image.innerText = "image";//to be changed
+                        tag.onclick = function() {TBD(this)};
+
+                        //add to table
+                        tr.appendChild(tag);
+                        tr.appendChild(name);
+                        tr.appendChild(sku);
+                        //tr.appendChild(skid);
+                        tr.appendChild(location);
+                        tr.appendChild(status);
+                        tr.appendChild(shipdate);
+                        tr.appendChild(lastupdate);
+                        tr.appendChild(grade);
+                        tr.appendChild(image);
+                        console.log(tableBody);
+                        tableBody.appendChild(tr);
+                }
+            }
+        }
+        else if(searchOpts[1]!=("SKU") && searchOpts[3]!=("Location")){
+            for(var i=0; i<info.length;i++){
+                if(searchOpts[1] === info[i].sku && searchOpts[3] === info[i].location){
+                        var tr = document.createElement("tr");
+                        var tag = document.createElement("td");
+                        var name = document.createElement("td");
+                        var sku = document.createElement("td");
+                        //var skid = document.createElement("td");
+                        var location = document.createElement("td");
+                        var status = document.createElement("td");
+                        var shipdate = document.createElement("td");
+                        var lastupdate = document.createElement("td");
+                        var grade = document.createElement("td");
+                        var image = document.createElement("td");
+
+                        //set values and attributes
+                        tr.setAttribute('id', info[i].ttag);
+                        tag.innerText = info[i].ttag;
+                        name.setAttribute('id', info[i].name);
+                        name.innerText = info[i].name;
+                        sku.setAttribute('id', info[i].sku);
+                        sku.innerText = info[i].sku;
+                        //skid.innerText = info[i].skid;
+                        location.setAttribute('id', info[i].location);
+                        location.innerText = info[i].location;
+                        status.innerText = info[i].status;
+                        shipdate.innerText = info[i].shipdate;
+                        lastupdate.innerText = info[i].lastupdate;
+                        grade.innerText = info[i].grade;
+                        image.innerText = "image";//to be changed
+                        tag.onclick = function() {TBD(this)};
+
+                        //add to table
+                        tr.appendChild(tag);
+                        tr.appendChild(name);
+                        tr.appendChild(sku);
+                        //tr.appendChild(skid);
+                        tr.appendChild(location);
+                        tr.appendChild(status);
+                        tr.appendChild(shipdate);
+                        tr.appendChild(lastupdate);
+                        tr.appendChild(grade);
+                        tr.appendChild(image);
+                        console.log(tableBody);
+                        tableBody.appendChild(tr);
+                }
+            }
+        }
+        else if(searchOpts[1]!=("SKU") && searchOpts[4]!=("Name")){
+            for(var i=0; i<info.length;i++){
+                if(searchOpts[1] === info[i].sku && info[i].name.toLowerCase().includes(searchOpts[4].toLowerCase())){
+                        var tr = document.createElement("tr");
+                        var tag = document.createElement("td");
+                        var name = document.createElement("td");
+                        var sku = document.createElement("td");
+                        //var skid = document.createElement("td");
+                        var location = document.createElement("td");
+                        var status = document.createElement("td");
+                        var shipdate = document.createElement("td");
+                        var lastupdate = document.createElement("td");
+                        var grade = document.createElement("td");
+                        var image = document.createElement("td");
+
+                        //set values and attributes
+                        tr.setAttribute('id', info[i].ttag);
+                        tag.innerText = info[i].ttag;
+                        name.setAttribute('id', info[i].name);
+                        name.innerText = info[i].name;
+                        sku.setAttribute('id', info[i].sku);
+                        sku.innerText = info[i].sku;
+                        //skid.innerText = info[i].skid;
+                        location.setAttribute('id', info[i].location);
+                        location.innerText = info[i].location;
+                        status.innerText = info[i].status;
+                        shipdate.innerText = info[i].shipdate;
+                        lastupdate.innerText = info[i].lastupdate;
+                        grade.innerText = info[i].grade;
+                        image.innerText = "image";//to be changed
+                        tag.onclick = function() {TBD(this)};
+
+                        //add to table
+                        tr.appendChild(tag);
+                        tr.appendChild(name);
+                        tr.appendChild(sku);
+                        //tr.appendChild(skid);
+                        tr.appendChild(location);
+                        tr.appendChild(status);
+                        tr.appendChild(shipdate);
+                        tr.appendChild(lastupdate);
+                        tr.appendChild(grade);
+                        tr.appendChild(image);
+                        console.log(tableBody);
+                        tableBody.appendChild(tr);
+                }
+            }
+        }
+        else if(searchOpts[3]!=("Location") && searchOpts[4]!=("Name")){
+            for(var i=0; i<info.length;i++){
+                if(searchOpts[3] === info[i].location && info[i].name.toLowerCase().includes(searchOpts[4].toLowerCase())){
+                        var tr = document.createElement("tr");
+                        var tag = document.createElement("td");
+                        var name = document.createElement("td");
+                        var sku = document.createElement("td");
+                        //var skid = document.createElement("td");
+                        var location = document.createElement("td");
+                        var status = document.createElement("td");
+                        var shipdate = document.createElement("td");
+                        var lastupdate = document.createElement("td");
+                        var grade = document.createElement("td");
+                        var image = document.createElement("td");
+
+                        //set values and attributes
+                        tr.setAttribute('id', info[i].ttag);
+                        tag.innerText = info[i].ttag;
+                        name.setAttribute('id', info[i].name);
+                        name.innerText = info[i].name;
+                        sku.setAttribute('id', info[i].sku);
+                        sku.innerText = info[i].sku;
+                        //skid.innerText = info[i].skid;
+                        location.setAttribute('id', info[i].location);
+                        location.innerText = info[i].location;
+                        status.innerText = info[i].status;
+                        shipdate.innerText = info[i].shipdate;
+                        lastupdate.innerText = info[i].lastupdate;
+                        grade.innerText = info[i].grade;
+                        image.innerText = "image";//to be changed
+                        tag.onclick = function() {TBD(this)};
+
+                        //add to table
+                        tr.appendChild(tag);
+                        tr.appendChild(name);
+                        tr.appendChild(sku);
+                        //tr.appendChild(skid);
+                        tr.appendChild(location);
+                        tr.appendChild(status);
+                        tr.appendChild(shipdate);
+                        tr.appendChild(lastupdate);
+                        tr.appendChild(grade);
+                        tr.appendChild(image);
+                        console.log(tableBody);
+                        tableBody.appendChild(tr);
+                }
+            }
+        }
+        else if(searchOpts[1]!=("SKU")){
+            for(var i=0; i<info.length;i++){
+                if(searchOpts[1] === info[i].sku){
+                        var tr = document.createElement("tr");
+                        var tag = document.createElement("td");
+                        var name = document.createElement("td");
+                        var sku = document.createElement("td");
+                        //var skid = document.createElement("td");
+                        var location = document.createElement("td");
+                        var status = document.createElement("td");
+                        var shipdate = document.createElement("td");
+                        var lastupdate = document.createElement("td");
+                        var grade = document.createElement("td");
+                        var image = document.createElement("td");
+
+                        //set values and attributes
+                        tr.setAttribute('id', info[i].ttag);
+                        tag.innerText = info[i].ttag;
+                        name.setAttribute('id', info[i].name);
+                        name.innerText = info[i].name;
+                        sku.setAttribute('id', info[i].sku);
+                        sku.innerText = info[i].sku;
+                        //skid.innerText = info[i].skid;
+                        location.setAttribute('id', info[i].location);
+                        location.innerText = info[i].location;
+                        status.innerText = info[i].status;
+                        shipdate.innerText = info[i].shipdate;
+                        lastupdate.innerText = info[i].lastupdate;
+                        grade.innerText = info[i].grade;
+                        image.innerText = "image";//to be changed
+                        tag.onclick = function() {TBD(this)};
+
+                        //add to table
+                        tr.appendChild(tag);
+                        tr.appendChild(name);
+                        tr.appendChild(sku);
+                        //tr.appendChild(skid);
+                        tr.appendChild(location);
+                        tr.appendChild(status);
+                        tr.appendChild(shipdate);
+                        tr.appendChild(lastupdate);
+                        tr.appendChild(grade);
+                        tr.appendChild(image);
+                        console.log(tableBody);
+                        tableBody.appendChild(tr);
+                }
+            }
+        }
+        else if(searchOpts[3]!=("Location")){
+            for(var i=0; i<info.length;i++){
+                if(searchOpts[3] === info[i].location){
+                        var tr = document.createElement("tr");
+                        var tag = document.createElement("td");
+                        var name = document.createElement("td");
+                        var sku = document.createElement("td");
+                        //var skid = document.createElement("td");
+                        var location = document.createElement("td");
+                        var status = document.createElement("td");
+                        var shipdate = document.createElement("td");
+                        var lastupdate = document.createElement("td");
+                        var grade = document.createElement("td");
+                        var image = document.createElement("td");
+
+                        //set values and attributes
+                        tr.setAttribute('id', info[i].ttag);
+                        tag.innerText = info[i].ttag;
+                        name.setAttribute('id', info[i].name);
+                        name.innerText = info[i].name;
+                        sku.setAttribute('id', info[i].sku);
+                        sku.innerText = info[i].sku;
+                        //skid.innerText = info[i].skid;
+                        location.setAttribute('id', info[i].location);
+                        location.innerText = info[i].location;
+                        status.innerText = info[i].status;
+                        shipdate.innerText = info[i].shipdate;
+                        lastupdate.innerText = info[i].lastupdate;
+                        grade.innerText = info[i].grade;
+                        image.innerText = "image";//to be changed
+                        tag.onclick = function() {TBD(this)};
+
+                        //add to table
+                        tr.appendChild(tag);
+                        tr.appendChild(name);
+                        tr.appendChild(sku);
+                        //tr.appendChild(skid);
+                        tr.appendChild(location);
+                        tr.appendChild(status);
+                        tr.appendChild(shipdate);
+                        tr.appendChild(lastupdate);
+                        tr.appendChild(grade);
+                        tr.appendChild(image);
+                        console.log(tableBody);
+                        tableBody.appendChild(tr);
+                }
+            }
+        }
+        else if(searchOpts[4]!=("Name")){
+            for(var i=0; i<info.length;i++){
+                if(info[i].name.toLowerCase().includes(searchOpts[4].toLowerCase())){
+                        var tr = document.createElement("tr");
+                        var tag = document.createElement("td");
+                        var name = document.createElement("td");
+                        var sku = document.createElement("td");
+                        //var skid = document.createElement("td");
+                        var location = document.createElement("td");
+                        var status = document.createElement("td");
+                        var shipdate = document.createElement("td");
+                        var lastupdate = document.createElement("td");
+                        var grade = document.createElement("td");
+                        var image = document.createElement("td");
+
+                        //set values and attributes
+                        tr.setAttribute('id', info[i].ttag);
+                        tag.innerText = info[i].ttag;
+                        name.setAttribute('id', info[i].name);
+                        name.innerText = info[i].name;
+                        sku.setAttribute('id', info[i].sku);
+                        sku.innerText = info[i].sku;
+                        //skid.innerText = info[i].skid;
+                        location.setAttribute('id', info[i].location);
+                        location.innerText = info[i].location;
+                        status.innerText = info[i].status;
+                        shipdate.innerText = info[i].shipdate;
+                        lastupdate.innerText = info[i].lastupdate;
+                        grade.innerText = info[i].grade;
+                        image.innerText = "image";//to be changed
+                        tag.onclick = function() {TBD(this)};
+
+                        //add to table
+                        tr.appendChild(tag);
+                        tr.appendChild(name);
+                        tr.appendChild(sku);
+                        //tr.appendChild(skid);
+                        tr.appendChild(location);
+                        tr.appendChild(status);
+                        tr.appendChild(shipdate);
+                        tr.appendChild(lastupdate);
+                        tr.appendChild(grade);
+                        tr.appendChild(image);
+                        console.log(tableBody);
+                        tableBody.appendChild(tr);
+                }
+            }
+        }
     });
-
 }
 
 
@@ -407,9 +739,9 @@ function deleteSearch(item){
     for (var i = 0; i < searchOpts.length; i++) {
         if(string == searchOpts[i]){
             if(i==0){
-                searchOpts[i]="SKU";
-            }else if(i==1){
                 searchOpts[i]="TAG";
+            }else if(i==1){
+                searchOpts[i]="SKU";
             }else if(i==2){
                 searchOpts[i]="SKID";
             }
