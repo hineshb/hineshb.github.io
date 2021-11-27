@@ -14,7 +14,6 @@ function loaddata(){
     var table = document.getElementById("dataTable");
     var tableBody = document.createElement("tbody");
     tableBody.setAttribute('id', "dataTableBody");
-    tableBody.style.height = "calc( 100vh - 200px )";
 
     for (var i = 0; i < info.length; i++) {
         //create elements
@@ -754,26 +753,10 @@ function deleteSearch(item){
             }         
         };
     }
-    if(searchOpts[0]==="TAG" && searchOpts[1]==="SKU" && searchOpts[3]==="Location" && searchOpts[4]==="Name"){
-        item.parentNode.remove();
-        document.getElementById("dataTableBody").remove();
-        loaddata();
-    }
-    else{
-        item.parentNode.remove();
-        if(searchOpts[0]==="TAG"){
-            runSearch();
-        }else{
-            runSearchTag();
-        }
-        
-    }
     console.log(item);
-    
-}
-
-function TBD(item){
-    console.log("Clicked on " + item.innerText);
+    item.parentNode.remove();
+    document.getElementById("dataTableBody").remove();
+    loaddata();
 }
 /*function deleteSearch(item){
     item.parentNode.remove();
