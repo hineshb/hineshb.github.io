@@ -44,6 +44,7 @@ function loaddata(){
         status.innerText = info[i].status;
         shipdate.innerText = info[i].shipdate;
         lastupdate.innerText = info[i].lastupdate;
+        grade.style.paddingLeft = "50px";
         grade.innerText = info[i].grade;
         image.innerText = "image";//to be changed
         tag.onclick = function() {TBD(this)};
@@ -76,7 +77,7 @@ const sku = new RegExp('^[0-9]{7}$');
 const loca = new RegExp('^[0-9]{3}-[0-9]{2}-[0-9]{2}$');
 
 var searchOpts = ["TAG", "SKU", "SKID", "Location", "Name"];
-var searchOpts2 = [];
+var currentTag;
 
 function search(){
     var str = document.getElementById("input").value;
@@ -95,7 +96,19 @@ function sortSearch(str){
     if(tag.test(str)){
         //alert("tag");
         if(searchOpts[0].match("TAG")){
+            var node = document.getElementById("searchResultHold");
+            while (node.firstChild) {
+                node.removeChild(node.firstChild);
+            }
+
             searchOpts[0] = str;
+            searchOpts[1]="SKU";
+			searchOpts[2]="SKID";
+			searchOpts[3]="Location";
+			searchOpts[4]="Name";
+            
+            //disable search
+            //disableSearchBar();
 
             //create elements
             var p = document.createElement("p");
@@ -112,7 +125,7 @@ function sortSearch(str){
             string.setAttribute('id','replaceTAG');
             string.innerText = str;
             spacer.innerText = "\xa0"+"\xa0"
-            span.setAttribute('id','closeSearchOpt');
+            span.setAttribute('id','closeSearchOptTag');
             span.innerText=closebtn;
             span.onclick = function() {deleteSearch(this)};
 
@@ -121,6 +134,7 @@ function sortSearch(str){
             p.appendChild(spacer);
             p.appendChild(span);
             div.appendChild(p);
+            
         }else if(!searchOpts[0].match("TAG")){
             searchOpts[0] = str;
             var replaceSearch = document.getElementById("replaceTAG");
@@ -162,10 +176,8 @@ function sortSearch(str){
             var replaceSearch = document.getElementById("replaceSKU");
             replaceSearch.innerText=str;
         }
-        searchOpts2.push(str);
         runSearch();
         console.log(searchOpts);
-        console.log("opt2:" + searchOpts2);
     }else if(skid.test(str)){
         //alert("skid");
         if(searchOpts[2].match("SKID")){
@@ -200,10 +212,8 @@ function sortSearch(str){
             var replaceSearch = document.getElementById("replaceSKID");
             replaceSearch.innerText=str;
         }
-        searchOpts2.push(str);
         runSearch();
         console.log(searchOpts);
-        console.log("opt2:" + searchOpts2);
     }else if(loca.test(str)){
         //alert("location");
         if(searchOpts[3].match("Location")){
@@ -238,10 +248,8 @@ function sortSearch(str){
             var replaceSearch = document.getElementById("replaceLocation");
             replaceSearch.innerText=str;
         }
-        searchOpts2.push(str);
         runSearch();
         console.log(searchOpts);
-        console.log("opt2:" + searchOpts2);
     }else{
         if(searchOpts[4].match("Name")){
             searchOpts[4] = str;
@@ -261,7 +269,7 @@ function sortSearch(str){
             string.setAttribute('id','replaceName');
             string.innerText = str;
             spacer.innerText = "\xa0"+"\xa0"
-            span.setAttribute('id','closeSearchOpt');
+            span.setAttribute('id','closeSearchOptTag');
             span.innerText=closebtn;
             span.onclick = function() {deleteSearch(this)};
 
@@ -275,10 +283,8 @@ function sortSearch(str){
             var replaceSearch = document.getElementById("replaceName");
             replaceSearch.innerText=str;
         }
-        searchOpts2.push(str);
         runSearch();
         console.log(searchOpts);
-        console.log("opt2:" + searchOpts2);
     }
 }
 
@@ -334,6 +340,7 @@ function runSearchTag(){
                 status.innerText = info[i].status;
                 shipdate.innerText = info[i].shipdate;
                 lastupdate.innerText = info[i].lastupdate;
+                grade.style.paddingLeft = "50px";
                 grade.innerText = info[i].grade;
                 image.innerText = "image";//to be changed
                 tag.onclick = function() {TBD(this)};
@@ -366,6 +373,13 @@ function runSearch(){
     //var table = document.getElementById("dataTable");
     //var tableBody = document.createElement("tbody");
     //tableBody.setAttribute('id', "dataTableBody");
+
+    //delete Tag Search
+    if(document.getElementById("closeSearchOptTag")){
+        document.getElementById("closeSearchOptTag").parentElement.remove();
+        searchOpts[0]="TAG";
+    }
+
     //delete elements in tablebody
     var tableBody = document.getElementById("dataTableBody");
     var node = document.getElementById("dataTableBody");
@@ -421,6 +435,7 @@ function runSearch(){
                         status.innerText = info[i].status;
                         shipdate.innerText = info[i].shipdate;
                         lastupdate.innerText = info[i].lastupdate;
+                        grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
                         tag.onclick = function() {TBD(this)};
@@ -469,6 +484,7 @@ function runSearch(){
                         status.innerText = info[i].status;
                         shipdate.innerText = info[i].shipdate;
                         lastupdate.innerText = info[i].lastupdate;
+                        grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
                         tag.onclick = function() {TBD(this)};
@@ -517,6 +533,7 @@ function runSearch(){
                         status.innerText = info[i].status;
                         shipdate.innerText = info[i].shipdate;
                         lastupdate.innerText = info[i].lastupdate;
+                        grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
                         tag.onclick = function() {TBD(this)};
@@ -565,6 +582,7 @@ function runSearch(){
                         status.innerText = info[i].status;
                         shipdate.innerText = info[i].shipdate;
                         lastupdate.innerText = info[i].lastupdate;
+                        grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
                         tag.onclick = function() {TBD(this)};
@@ -613,6 +631,7 @@ function runSearch(){
                         status.innerText = info[i].status;
                         shipdate.innerText = info[i].shipdate;
                         lastupdate.innerText = info[i].lastupdate;
+                        grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
                         tag.onclick = function() {TBD(this)};
@@ -661,6 +680,7 @@ function runSearch(){
                         status.innerText = info[i].status;
                         shipdate.innerText = info[i].shipdate;
                         lastupdate.innerText = info[i].lastupdate;
+                        grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
                         tag.onclick = function() {TBD(this)};
@@ -709,6 +729,7 @@ function runSearch(){
                         status.innerText = info[i].status;
                         shipdate.innerText = info[i].shipdate;
                         lastupdate.innerText = info[i].lastupdate;
+                        grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
                         tag.onclick = function() {TBD(this)};
@@ -734,6 +755,7 @@ function runSearch(){
 
 
 function deleteSearch(item){
+    console.log(item);
     var string="";
     string = item.parentElement.childNodes[1].innerText;
     //console.log(item.parentNode);
@@ -768,12 +790,20 @@ function deleteSearch(item){
         }
         
     }
-    console.log(item);
+    
     
 }
 
 function TBD(item){
     console.log("Clicked on " + item.innerText);
+}
+
+function disableSearchBar(){
+    var searchBar = document.getElementById("input");
+    searchBar.disabled = true
+    searchBar.placeholder = "Disabled";
+    const clearIcon = document.querySelector(".clear-icon");
+    clearIcon.style.visibility = "hidden";
 }
 /*function deleteSearch(item){
     item.parentNode.remove();

@@ -182,7 +182,10 @@ body {
     border-radius: 25px;
     margin: 0% 0% 1.5% 1.5%;
   }
-  #closeSearchOpt{
+  #closeSearchOpt {
+    color: red;
+  }
+  #closeSearchOptTag {
     color: red;
   }
   #content {
