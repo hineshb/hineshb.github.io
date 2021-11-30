@@ -10,7 +10,7 @@ body {
   /*SIDE NAV BAR */
   .sidenav {
     height: 100%;
-    width: 160px;
+    width: 100px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -28,16 +28,27 @@ body {
     transform: translate(-50%, -50%);
   }
 
+
   .sidenav a {
-    padding: 6px 8px 6px 16px;
+    padding: 6px 8px 6px 8px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
+    text-align: center;
   }
   
   .sidenav a:hover {
-    color: #f1f1f1;
+    /*color: #ff0000;*/
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 55%;
+    box-shadow: 0 0 100px rgba(255,0,0);
+  }
+
+  .sidenav a:active {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 55%;
+    box-shadow: 0 0 100px rgba(255,0,0);
   }
 
 
@@ -108,7 +119,7 @@ body {
   /*MAIN PAGE*/
 
   .main {
-    margin-left: 160px; /* Same as the width of the sidenav */
+    margin-left: 100px; /* Same as the width of the sidenav */
     font-size: 28px; /* Increased text to enable scrolling */
     padding: 0px 10px;
   }
@@ -117,7 +128,7 @@ body {
 
   .search-container {
     float: left;
-    background-color: rgba(51, 51, 51, .4);
+    background-color: rgba(51, 51, 51, .8);
     padding: 8px 16px;
     border-radius: 25px;
     margin: 1.5% 0% 0% 0%;
@@ -210,7 +221,7 @@ body {
   }*/
 
   .contBorder{
-    background-color: rgba(51, 51, 51, .4);
+    background-color: rgba(51, 51, 51, .8);
     padding: 28px 1px;
     border-radius: 25px;
   }
@@ -286,7 +297,7 @@ body {
     overflow-y: auto;
 }*/
 table{
-  background-color: rgba(51, 51, 51, .4);
+  background-color: rgba(51, 51, 51, .8);
   border-radius: 25%;
 }
 table, tr td {
@@ -310,18 +321,64 @@ td {
   padding-left: 20px;
   padding-right: 20px;
 }
+thead{
+  pointer-events: none;
+  color:white;
+}
 tbody {
   display: block;
   height: calc( 100vh - 200px );
   overflow: auto;
   font-size: 20px;
-  
+  color:grey;
 }
 thead, tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;/* even columns width , fix width of table too*/
 }
+
+/*#dataTableBody tr:last-child:hover td:last-child:hover {
+  background-color: #ddd;
+  border-radius: 0% 25% 25% 0%;
+}
+
+#dataTableBody tr:first-child:hover td:first-child:hover {
+  background-color: #ddd;
+  border-radius: 25% 0% 0% 25%;
+}*/
+
+/*
+#itemRow :not(:first-child):not(:last-child):hover {
+  background-color: #000;
+}
+#itemRow td:first-child:hover {
+  background-color: #ddd;
+}
+#itemRow td:last-child:hover {
+  background-color: #ddd;
+} */
+
+table tr:hover {background-color: #121214;}
+
+td:first-child,
+#itemRow:first-child {
+  border-radius: 25px 25px 25px 25px;
+}
+
+#itemRow:not(:first-child):not(:last-child):hover {
+  border-radius: 25px 25px 25px 25px;
+}
+
+td:last-child,
+#itemRow:last-child {
+  border-radius: 25px 25px 25px 25px;
+}
+
+#clickableTag{
+  color:white;
+}
+
 
 
 

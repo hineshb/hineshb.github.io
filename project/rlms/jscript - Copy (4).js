@@ -32,8 +32,7 @@ function loaddata(){
 
         //set values and attributes
         //td.style.textAlign = 'center';
-        tr.setAttribute('id', "itemRow");
-        tag.setAttribute('id','clickableTag');
+        tr.setAttribute('id', info[i].ttag);
         tag.innerText = info[i].ttag;
         name.setAttribute('id', info[i].name);
         name.innerText = info[i].name;
@@ -329,8 +328,7 @@ function runSearchTag(){
 
                 //set values and attributes
                 //td.style.textAlign = 'center';
-                tr.setAttribute('id', "itemRow");
-                tag.setAttribute('id','clickableTag');
+                tr.setAttribute('id', info[i].ttag);
                 tag.innerText = info[i].ttag;
                 name.setAttribute('id', info[i].name);
                 name.innerText = info[i].name;
@@ -425,8 +423,7 @@ function runSearch(){
                         var image = document.createElement("td");
 
                         //set values and attributes
-                        tr.setAttribute('id', "itemRow");
-                        tag.setAttribute('id','clickableTag');
+                        tr.setAttribute('id', info[i].ttag);
                         tag.innerText = info[i].ttag;
                         name.setAttribute('id', info[i].name);
                         name.innerText = info[i].name;
@@ -475,8 +472,7 @@ function runSearch(){
                         var image = document.createElement("td");
 
                         //set values and attributes
-                        tr.setAttribute('id', "itemRow");
-                        tag.setAttribute('id','clickableTag');
+                        tr.setAttribute('id', info[i].ttag);
                         tag.innerText = info[i].ttag;
                         name.setAttribute('id', info[i].name);
                         name.innerText = info[i].name;
@@ -525,8 +521,7 @@ function runSearch(){
                         var image = document.createElement("td");
 
                         //set values and attributes
-                        tr.setAttribute('id', "itemRow");
-                        tag.setAttribute('id','clickableTag');
+                        tr.setAttribute('id', info[i].ttag);
                         tag.innerText = info[i].ttag;
                         name.setAttribute('id', info[i].name);
                         name.innerText = info[i].name;
@@ -575,8 +570,7 @@ function runSearch(){
                         var image = document.createElement("td");
 
                         //set values and attributes
-                        tr.setAttribute('id', "itemRow");
-                        tag.setAttribute('id','clickableTag');
+                        tr.setAttribute('id', info[i].ttag);
                         tag.innerText = info[i].ttag;
                         name.setAttribute('id', info[i].name);
                         name.innerText = info[i].name;
@@ -625,8 +619,7 @@ function runSearch(){
                         var image = document.createElement("td");
 
                         //set values and attributes
-                        tr.setAttribute('id', "itemRow");
-                        tag.setAttribute('id','clickableTag');
+                        tr.setAttribute('id', info[i].ttag);
                         tag.innerText = info[i].ttag;
                         name.setAttribute('id', info[i].name);
                         name.innerText = info[i].name;
@@ -675,8 +668,7 @@ function runSearch(){
                         var image = document.createElement("td");
 
                         //set values and attributes
-                        tr.setAttribute('id', "itemRow");
-                        tag.setAttribute('id','clickableTag');
+                        tr.setAttribute('id', info[i].ttag);
                         tag.innerText = info[i].ttag;
                         name.setAttribute('id', info[i].name);
                         name.innerText = info[i].name;
@@ -725,8 +717,7 @@ function runSearch(){
                         var image = document.createElement("td");
 
                         //set values and attributes
-                        tr.setAttribute('id', "itemRow");
-                        tag.setAttribute('id','clickableTag');
+                        tr.setAttribute('id', info[i].ttag);
                         tag.innerText = info[i].ttag;
                         name.setAttribute('id', info[i].name);
                         name.innerText = info[i].name;
