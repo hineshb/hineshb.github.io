@@ -806,7 +806,7 @@ function deleteSearch(item){
 function TBD(item){
     //console.log("Clicked on " + item.innerText);
     //console.log(item);
-
+    item.parentElement.style.background = "#121214";
     var string = document.getElementById("printTagNum");
     string.innerText = "Clicked on " + item.innerText;
 
@@ -827,12 +827,14 @@ function TBD(item){
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
     modal.style.display = "none";
+    item.parentElement.style.background = "";
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        item.parentElement.style.background = "";
     }
     }
 }

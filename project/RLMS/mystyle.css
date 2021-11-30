@@ -367,7 +367,7 @@ td:first-child,
   border-radius: 25px 25px 25px 25px;
 }
 
-#itemRow:not(:first-child):not(:last-child):hover {
+#itemRow:not(:first-child):not(:last-child) {
   border-radius: 25px 25px 25px 25px;
 }
 
