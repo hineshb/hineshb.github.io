@@ -924,7 +924,6 @@ function TBD(item, info){
     });
 
 
-    item.parentElement.style.background = "#121214";
     //var string = document.getElementById("printTagNum");
     //string.innerText = "Clicked on " + item.innerText;
 
@@ -940,6 +939,7 @@ function TBD(item, info){
     // When the user clicks the button, open the modal 
     item.ondblclick = function() {
     modal.style.display = "block";
+    item.parentElement.style.background = "#121214";
     document.getElementById("dataTableBody").style.overflow = "hidden"; // hide scroll
     }
 
