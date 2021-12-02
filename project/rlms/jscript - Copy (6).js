@@ -48,17 +48,7 @@ function loaddata(){
         grade.style.paddingLeft = "50px";
         grade.innerText = info[i].grade;
         image.innerText = "image";//to be changed
-
-        //Onclick open functions
-        //tag.onclick = function() {TBD(this)};
-        name.onclick = function() {TBD(this, info)};
-        sku.onclick = function() {TBD(this, info)};
-        location.onclick = function() {TBD(this, info)};
-        shipdate.onclick = function() {TBD(this, info)};
-        status.onclick = function() {TBD(this, info)};
-        lastupdate.onclick = function() {TBD(this, info)};
-        grade.onclick = function() {TBD(this, info)};
-        image.onclick = function() {TBD(this, info)};
+        tag.onclick = function() {TBD(this)};
 
         //add to table
         tr.appendChild(tag);
@@ -355,17 +345,7 @@ function runSearchTag(){
                 grade.style.paddingLeft = "50px";
                 grade.innerText = info[i].grade;
                 image.innerText = "image";//to be changed
-                
-                //Onclick open functions
-                //tag.onclick = function() {TBD(this)};
-                name.onclick = function() {TBD(this, info)};
-                sku.onclick = function() {TBD(this, info)};
-                location.onclick = function() {TBD(this, info)};
-                shipdate.onclick = function() {TBD(this, info)};
-                status.onclick = function() {TBD(this, info)};
-                lastupdate.onclick = function() {TBD(this, info)};
-                grade.onclick = function() {TBD(this, info)};
-                image.onclick = function() {TBD(this, info)};
+                tag.onclick = function() {TBD(this)};
 
                 //add to table
                 tr.appendChild(tag);
@@ -461,17 +441,7 @@ function runSearch(){
                         grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
-                        
-                        //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
-                        name.onclick = function() {TBD(this, info)};
-                        sku.onclick = function() {TBD(this, info)};
-                        location.onclick = function() {TBD(this, info)};
-                        shipdate.onclick = function() {TBD(this, info)};
-                        status.onclick = function() {TBD(this, info)};
-                        lastupdate.onclick = function() {TBD(this, info)};
-                        grade.onclick = function() {TBD(this, info)};
-                        image.onclick = function() {TBD(this, info)};
+                        tag.onclick = function() {TBD(this)};
 
                         //add to table
                         tr.appendChild(tag);
@@ -521,17 +491,7 @@ function runSearch(){
                         grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
-                        
-                        //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
-                        name.onclick = function() {TBD(this, info)};
-                        sku.onclick = function() {TBD(this, info)};
-                        location.onclick = function() {TBD(this, info)};
-                        shipdate.onclick = function() {TBD(this, info)};
-                        status.onclick = function() {TBD(this, info)};
-                        lastupdate.onclick = function() {TBD(this, info)};
-                        grade.onclick = function() {TBD(this, info)};
-                        image.onclick = function() {TBD(this, info)};
+                        tag.onclick = function() {TBD(this)};
 
                         //add to table
                         tr.appendChild(tag);
@@ -581,17 +541,7 @@ function runSearch(){
                         grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
-                        
-                        //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
-                        name.onclick = function() {TBD(this, info)};
-                        sku.onclick = function() {TBD(this, info)};
-                        location.onclick = function() {TBD(this, info)};
-                        shipdate.onclick = function() {TBD(this, info)};
-                        status.onclick = function() {TBD(this, info)};
-                        lastupdate.onclick = function() {TBD(this, info)};
-                        grade.onclick = function() {TBD(this, info)};
-                        image.onclick = function() {TBD(this, info)};
+                        tag.onclick = function() {TBD(this)};
 
                         //add to table
                         tr.appendChild(tag);
@@ -641,17 +591,7 @@ function runSearch(){
                         grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
-                        
-                        //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
-                        name.onclick = function() {TBD(this, info)};
-                        sku.onclick = function() {TBD(this, info)};
-                        location.onclick = function() {TBD(this, info)};
-                        shipdate.onclick = function() {TBD(this, info)};
-                        status.onclick = function() {TBD(this, info)};
-                        lastupdate.onclick = function() {TBD(this, info)};
-                        grade.onclick = function() {TBD(this, info)};
-                        image.onclick = function() {TBD(this, info)};
+                        tag.onclick = function() {TBD(this)};
 
                         //add to table
                         tr.appendChild(tag);
@@ -701,17 +641,7 @@ function runSearch(){
                         grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
-                        
-                        //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
-                        name.onclick = function() {TBD(this, info)};
-                        sku.onclick = function() {TBD(this, info)};
-                        location.onclick = function() {TBD(this, info)};
-                        shipdate.onclick = function() {TBD(this, info)};
-                        status.onclick = function() {TBD(this, info)};
-                        lastupdate.onclick = function() {TBD(this, info)};
-                        grade.onclick = function() {TBD(this, info)};
-                        image.onclick = function() {TBD(this, info)};
+                        tag.onclick = function() {TBD(this)};
 
                         //add to table
                         tr.appendChild(tag);
@@ -761,17 +691,7 @@ function runSearch(){
                         grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
-                        
-                        //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
-                        name.onclick = function() {TBD(this, info)};
-                        sku.onclick = function() {TBD(this, info)};
-                        location.onclick = function() {TBD(this, info)};
-                        shipdate.onclick = function() {TBD(this, info)};
-                        status.onclick = function() {TBD(this, info)};
-                        lastupdate.onclick = function() {TBD(this, info)};
-                        grade.onclick = function() {TBD(this, info)};
-                        image.onclick = function() {TBD(this, info)};
+                        tag.onclick = function() {TBD(this)};
 
                         //add to table
                         tr.appendChild(tag);
@@ -821,17 +741,7 @@ function runSearch(){
                         grade.style.paddingLeft = "50px";
                         grade.innerText = info[i].grade;
                         image.innerText = "image";//to be changed
-                        
-                        //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
-                        name.onclick = function() {TBD(this, info)};
-                        sku.onclick = function() {TBD(this, info)};
-                        location.onclick = function() {TBD(this, info)};
-                        shipdate.onclick = function() {TBD(this, info)};
-                        status.onclick = function() {TBD(this, info)};
-                        lastupdate.onclick = function() {TBD(this, info)};
-                        grade.onclick = function() {TBD(this, info)};
-                        image.onclick = function() {TBD(this, info)};
+                        tag.onclick = function() {TBD(this)};
 
                         //add to table
                         tr.appendChild(tag);
@@ -853,8 +763,8 @@ function runSearch(){
 }
 
 
-function deleteSearch(item, info){
-    console.log(info);
+function deleteSearch(item){
+    console.log(item);
     var string="";
     string = item.parentElement.childNodes[1].innerText;
     //console.log(item.parentNode);
@@ -893,40 +803,12 @@ function deleteSearch(item, info){
     
 }
 
-function TBD(item, info){
+function TBD(item){
     //console.log("Clicked on " + item.innerText);
-    var selectedTag = item.parentElement.firstChild.innerText;
-    console.log(item.parentElement.firstChild.innerText);
-    fetch('info.json')
-   .then(res => res.json())
-   .then(function(data){
-   //console.log(data.length)
-   //console.log(document.getElementById("input").value)
-    info = data;
-
-    for(var i=0;i<info.length;i++){
-        if(selectedTag===info[i].ttag){
-            console.log(info[i]);
-            document.getElementById("printTitleName").innerText = info[i].name;
-            document.getElementById("printSomeSpecs").innerText = info[i].specs.caseSize + ", " + info[i].specs.bandColor + ", " + info[i].specs.case;
-            document.getElementById("printCondition").innerText = "Condition: " + info[i].condition;
-            document.getElementById("printGrade").innerText = "Grade: " + info[i].grade;
-            document.getElementById("printFunctional").innerText = "Functional Description: " + info[i].functional;
-            document.getElementById("printFunctionalDes").innerText = info[i].functionalDes;
-            document.getElementById("printPhysical").innerText = "Physical Description: " + info[i].physical;
-            document.getElementById("printPhysicalDes").innerText = info[i].physicalDes;
-            document.getElementById("printBrand").innerText = "Brand: " + info[i].specs.brand;
-            document.getElementById("printModel").innerText = "Model: " + info[i].specs.model;
-            document.getElementById("printSeries").innerText = "Series: " + info[i].specs.series;
-            document.getElementById("printOS").innerText = "Operating System: " + info[i].specs.os;
-        }
-    }
-    });
-
-
+    //console.log(item);
     item.parentElement.style.background = "#121214";
-    //var string = document.getElementById("printTagNum");
-    //string.innerText = "Clicked on " + item.innerText;
+    var string = document.getElementById("printTagNum");
+    string.innerText = "Clicked on " + item.innerText;
 
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -940,7 +822,6 @@ function TBD(item, info){
     // When the user clicks the button, open the modal 
     item.ondblclick = function() {
     modal.style.display = "block";
-    document.getElementById("dataTableBody").style.overflow = "hidden"; // hide scroll
     }
 
     // When the user clicks on <span> (x), close the modal
@@ -954,7 +835,6 @@ function TBD(item, info){
     if (event.target == modal) {
         modal.style.display = "none";
         item.parentElement.style.background = "";
-        document.getElementById("dataTableBody").style.overflow = ""; // hide scroll
     }
     }
 }
@@ -985,7 +865,8 @@ function myFunction(str) {
 
     console.log(char);
     for (var i = 0; i < arrayLength; i++) {
-        console.log(info[i].ttag);   
+        console.log(info[i].ttag);
+        
     }
 }
     

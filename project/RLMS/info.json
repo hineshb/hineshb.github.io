@@ -9,11 +9,19 @@
     "lastupdate": "2021/08/12 07:29",
     "grade": "A",
     "image": "",
+    "condition": "New",
+    "functional": "New/Sealed",
+    "functionalDes": "The unit is new/sealed",
+    "physical": "New",
+    "physicalDes": "Untouched sealed in the box",
     "specs": {
-        "motherboard": "some mb",
-        "ram": "some ram",
-        "harddrive": "some hdd",
-        "screensize": "size"
+        "brand": "Apple",
+        "model": "MYDN2VC/A",
+        "series": "SE",
+        "caseSize": "44mm",
+        "bandColor": "Pink Sport Band",
+        "case": "Steel Case",
+        "os": "Apple Watch OS"
     }
 },
 {
@@ -27,11 +35,19 @@
     "lastupdate": "2021/07/13 12:46",
     "grade": "B",
     "image": "",
+    "condition": "Used",
+    "functional": "Working",
+    "functionalDes": "The unit has been previously used, tested and in working condition. It has been updated to the latest Apple Watch software and has been reset to factory default settings. All components function properly and as intended.",
+    "physical": "Great",
+    "physicalDes": "Unit is in great physical condition as it has very minor to no scratches or imperfections on the screen, body or strap. Unit comes with all original accessories including in the box.",
     "specs": {
-        "motherboard": "some mb",
-        "ram": "some ram",
-        "harddrive": "some hdd",
-        "screensize": "size"
+        "brand": "Apple",
+        "model": "MTGW2CL/A",
+        "series": "Series 3",
+        "caseSize": "42mm",
+        "bandColor": "White Sport Band",
+        "case": "Steel Case",
+        "os": "Apple Watch OS"
     }
 },
 {
@@ -45,11 +61,19 @@
     "lastupdate": "2021/07/11 15:02",
     "grade": "B",
     "image": "",
+    "condition": "Used",
+    "functional": "Working",
+    "functionalDes": "The unit has been previously used, tested and in working condition. It has been updated to the latest Apple Watch software and has been reset to factory default settings. All components function properly and as intended.",
+    "physical": "Good",
+    "physicalDes": "Unit is in great physical condition as it has very minor to no scratches or imperfections on the screen, body or strap. Unit comes with all original accessories including in the box.",
     "specs": {
-        "motherboard": "some mb",
-        "ram": "some ram",
-        "harddrive": "some hdd",
-        "screensize": "size"
+        "brand": "Apple",
+        "model": "M00J3VC/A",
+        "series": "S6",
+        "caseSize": "44mm",
+        "bandColor": "Blue Sport Band",
+        "case": "Steel Case",
+        "os": "Apple Watch OS"
     }
 },
 {
@@ -63,11 +87,19 @@
     "lastupdate": "2021/06/30 10:09",
     "grade": "As Is",
     "image": "",
+    "condition": "Used",
+    "functional": "Working",
+    "functionalDes": "The unit has been previously used, tested and in working condition. It has been updated to the latest Apple Watch software and has been reset to factory default settings. All components function properly and as intended.",
+    "physical": "Great",
+    "physicalDes": "Unit is in good physical condition as it has some scratches on the screen, body or strap. Unit comes with all original accessories including in the box.",
     "specs": {
-        "motherboard": "some mb",
-        "ram": "some ram",
-        "harddrive": "some hdd",
-        "screensize": "size"
+        "brand": "Apple",
+        "model": "MTUN2VC/A",
+        "series": "Series 4",
+        "caseSize": "40mm",
+        "bandColor": "Black Sport Band",
+        "case": "Steel Case",
+        "os": "Apple Watch OS"
     }
 },
 {
@@ -81,11 +113,19 @@
     "lastupdate": "2020/06/25 11:56",
     "grade": "A",
     "image": "",
+    "condition": "Working AS-IS",
+    "functional": "Working AS-IS",
+    "functionalDes": "This unit's buttons do not function. Battery life cannot be guaranteed. Functionality cannot be guaranteed.",
+    "physical": "Great",
+    "physicalDes": "Unit is in fair condition as it has way too many scratches on the display. The buttons don't push in. Missing all accessories",
     "specs": {
-        "motherboard": "some mb",
-        "ram": "some ram",
-        "harddrive": "some hdd",
-        "screensize": "size"
+        "brand": "Apple",
+        "model": "MX372VC/A",
+        "series": "Series 5",
+        "caseSize": "40mm",
+        "bandColor": "Brown Sport Band",
+        "case": "Steel Case",
+        "os": "Apple Watch OS"
     }
 },
 {
@@ -99,10 +139,18 @@
     "lastupdate": "2020/06/16 13:07",
     "grade": "C",
     "image": "",
+    "condition": "Used",
+    "functional": "Working",
+    "functionalDes": "The unit has been previously used, tested and in working condition. It has been updated to the latest Apple Watch software and has been reset to factory default settings. All components function properly and as intended.",
+    "physical": "Great",
+    "physicalDes": "Unit is in great physical condition as it has very minor to no scratches or imperfections on the screen, body or strap. Unit comes with all original accessories including in the box.",
     "specs": {
-        "motherboard": "some mb",
-        "ram": "some ram",
-        "harddrive": "some hdd",
-        "screensize": "size"
+        "brand": "Apple",
+        "model": "MWV82VC/A",
+        "series": "Series 5",
+        "caseSize": "40mm",
+        "bandColor": "Grey Sport Band",
+        "case": "Steel Case",
+        "os": "Apple Watch OS"
     }
 }]
