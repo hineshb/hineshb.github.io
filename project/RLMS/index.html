@@ -14,16 +14,15 @@
 
         <div class="sidenav">
           <div class="active">
-            <div><a id="sideNav0" href="#image1" onclick="gotoNode(this)">image1</a></div>
-            <div><a id="sideNav1" href="#image2" onclick="gotoNode(this)"><img src="\images\sidebar\search.PNG" alt="Search" style="width:50px;height:50px;"></a></div>
-            <div><a id="sideNav2" href="#image3" onclick="gotoNode(this)">image3</a></div>
-            <div><a id="sideNav3" href="#image4" onclick="gotoNode(this)">image4</a></div>
-            <div><a id="sideNav4" href="#image5" onclick="gotoNode(this)">image5</a></div>
+            <div style="border-left: 15px solid rgba(255,0,0);"><a id="sideNav0" style="background: rgba(255, 0, 0, 0.2);" href="#" onclick="gotoDataPage(this)">Data</a></div>
+            <div><a id="sideNav1" href="#" onclick="gotoSearchPage(this)">Search</a></div> <!--<img src="\images\sidebar\search.png" alt="Search" style="width:50px;height:50px;">-->
+            <div><a id="sideNav2" href="#" onclick="gotoSomething1(this)">Something1</a></div>
+            <div><a id="sideNav3" href="#" onclick="gotoSomething2(this)">Something2</a></div>
           </div>
         </div>
         
         <div class="main">
-          <div class="search-container">
+          <div class="search-container" style="display:none;">
                 <!--<div class="searchform">
                     <input id="input" type="text" placeholder="Search.." name="search">
                     <button type="submit" onclick="search();">
@@ -49,7 +48,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn">Manage 
+                    <button class="dropbtn">Manage
                       <i class="fa fa-caret-down" style="font-size:20px;color:yellow"></i>
                     </button>
                     <div class="dropdown-content">
@@ -70,6 +69,11 @@
                 </div> 
             </div>
 
+            <div id="dataPage" style="display:block;">
+              <p>data shit</p>
+            </div>
+
+            <div id="searchPage" style="display:none;">
             <!-- Search entries -->
             <div id="searchResultHold">
               <!--<p class="searchresult">Location: <span>501-01-01</span> <span>&nbsp</span> <button id="closeSearchOpt">&#10006</button></p>-->
@@ -113,7 +117,7 @@
 
             <!-- Modal content -->
             <div class="modal-content">
-              <div class="close">&nbsp;&times;&nbsp;</div>
+              <div class="close" style="margin-left: 25px;">&nbsp;&times;&nbsp;</div>
               <span>
                 <div class="previewBtns"><button style="margin-right: 10px; margin-top: 25px;">Edit Listing</button></div>
                 <div class="previewBtns"><button style="margin-right: 10px; margin-top: 25px;">Copy Listing</button></div>
@@ -163,8 +167,261 @@
               <br>
               <p id="printOS" style="font-size: 14px;"></p>
             </div>
-
           </div>
+        </div>
+
+        <!--Tag Sheet-->
+        <div id="tagSheet" style="display: none;">
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="grid-container-TagSheet"> <!-- Tag Sku 2Buttons-->
+                <div class="grid-item-TagSheet"> <!-- Tag -->
+                  <span style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Tag:&nbsp;</span><span id="inputTag"></span> 
+                </div>
+                <div class="grid-item-TagSheet"> <!-- Sku -->
+                  <span style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">SKU:&nbsp;</span><span id="inputSku"></span> 
+                </div>
+                <div class="grid-item-TagSheet"> <!-- Buttons -->
+                  <span style="padding-left: 10px;"><button>Print Label</button></span>
+                  <span style="padding-left: 40px;"><button>Save</button></span>
+                </div>
+              </div>
+              <div class="grid-container-DropDowns"> <!-- Drop Down Menus 1-->
+                <div class="grid-item-DropDowns"> <!--Sales Type-->
+                  <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Sale Type</div>
+                  <div>
+                    <nav>
+                      <div><span class="spanDrop">Fixed Price </span> <span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                       <input id="toggle" type="checkbox">
+                        <ul>
+                          <li><a href="#">Fixed Price</a></li>
+                          <li><a href="#">Auction</a></li>
+                        </ul>
+                    </nav>
+                  </div>  
+                </div> <!--Sales Type End-->
+                <div class="grid-item-DropDowns"> <!--Platform Type-->
+                  <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Platform</div>
+                  <div>
+                    <nav>
+                      <div><span class="spanDrop">Ebay</span><span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                       <input id="toggle" type="checkbox">
+                        <ul>
+                          <li><a href="#">EBay</a></li>
+                          <li><a href="#">Shopify</a></li>
+                          <li><a href="#">Facebook Market</a></li>
+                          <li><a href="#">Instagram Shop</a></li>
+                        </ul>
+                    </nav>
+                  </div>  
+                </div> <!--Platform Type End-->
+              </div> <!-- Drop Down Menus Ends 1-->
+
+              <div class="grid-container-DropDowns"> <!-- Drop Down Menus 2-->
+                <div class="grid-item-DropDowns"> <!--Item Category-->
+                  <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Item Category</div>
+                  <div>
+                    <nav>
+                      <div><span class="spanDrop">Smart Watches</span> <span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                       <input id="toggle" type="checkbox">
+                        <ul>
+                          <li><a href="#">Smart Watches</a></li>
+                        </ul>
+                    </nav>
+                  </div>  
+                </div> <!--Item Category End-->
+                <div class="grid-item-DropDowns"> <!--Item Group-->
+                  <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Item Group</div>
+                  <div>
+                    <nav>
+                      <div><span class="spanDrop">Apple Smart Devices</span><span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                       <input id="toggle" type="checkbox">
+                        <ul>
+                          <li><a href="#">Apple Smart Devices</a></li>
+                        </ul>
+                    </nav>
+                  </div>  
+                </div> <!--Item Group End-->
+              </div> <!-- Drop Down Menus Ends 2-->
+
+              <div class="grid-container-DropDowns"> <!-- Drop Down Menus 3-->
+                <div class="grid-item-DropDowns"> <!--Current Status-->
+                  <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Current Status</div>
+                  <div>
+                    <nav>
+                      <div><span class="spanDrop">To be Photographed</span> <span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                       <input id="toggle" type="checkbox">
+                        <ul>
+                          <li><a href="#">Diagnostic</a></li>
+                          <li><a href="#">To Be Photographed</a></li>
+                          <li><a href="#">Photographed</a></li>
+                          <li><a href="#">To Be Listed</a></li>
+                          <li><a href="#">To Be Shipped</a></li>
+                          <li><a href="#">Shipped</a></li>
+                        </ul>
+                    </nav>
+                  </div>  
+                </div> <!--Item Category End-->
+                <div class="grid-item-DropDowns"> <!--Current Location-->
+                  <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Current Location</div>
+                  <div>
+                    <input id="locationNum" type="text" name="locationNum" placeholder="###-##-###">
+                  </div>  
+                </div> <!--Item Group End-->
+              </div> <!-- Drop Down Menus Ends 3-->
+
+              <hr class="hrBar">
+
+              <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Dimensions and Weight</div><br>
+            
+              <!--<div>
+                <span>
+                  <label class="switch">
+                    <input type="checkbox" id="togBtn">
+                    <div class="slider round"></div>
+                  </label>
+                </span>
+                <span style="float:right; padding-right:60px;">
+                  <label class="switch-weight">
+                    <input type="checkbox" id="togBtn-weight">
+                    <div class="slider-weight round"></div>
+                  </label>
+                </span>
+              </div>-->
+
+              <div class="grid-container-Dimensions">
+                <div class="grid-item-Dimensions">
+                  <span>
+                    <label class="switch">
+                      <input type="checkbox" id="togBtn">
+                      <div class="slider round"></div>
+                    </label>
+                  </span> <br>
+                  <input id="itemLength" type="text" name="length" placeholder="Length" style="color: ivory; width:85px;">
+                  <input id="itemWidth" type="text" name="width" placeholder="Width" style="color: ivory; width:85px;">
+                  <input id="itemHeight" type="text" name="height" placeholder="Height" style="color: ivory; width:85px;">                
+                </div>
+                <div class="grid-item-Dimensions">
+                  <span>
+                    <label class="switch-weight">
+                      <input type="checkbox" id="togBtn-weight">
+                      <div class="slider-weight round"></div>
+                    </label>
+                  </span> <br>
+                  <input id="itemWeight" type="text" name="weight" placeholder="Weight" style="color: ivory; width:85px;">
+                </div>
+              </div>
+
+            </div> <!-- end of first grid -->
+
+
+            <div class="grid-item"> <!--Tag Information Specs/Descrition-->
+              <div style="float: right; margin-bottom: 10px;">
+                <button>Copy Listing</button>
+                <button>Paste Listing</button>
+              </div><br>
+              <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Title</div>
+                <input id="tagTitle" type="text" name="titleBox" placeholder="" style="color: ivory;">
+              <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Subtitle</div>
+                <input id="tagSubtitle" type="text" name="subTitleBox" placeholder="" style="color: ivory;">
+
+                <div class="grid-container-DropDowns"> <!-- Drop Down for Grade Item Status-->
+                  <div class="grid-item-DropDowns"> <!--Item Grade-->
+                    <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Grade</div>
+                    <div>
+                      <nav>
+                        <div><span class="spanDrop">A</span> <span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                         <input id="toggle" type="checkbox">
+                          <ul>
+                            <li><a href="#">N</a></li>
+                            <li><a href="#">A</a></li>
+                            <li><a href="#">B</a></li>
+                            <li><a href="#">C</a></li>
+                            <li><a href="#">X</a></li>
+                          </ul>
+                      </nav>
+                    </div>  
+                  </div> <!--Item Grade End-->
+                  <div class="grid-item-DropDowns"> <!--Item Status-->
+                    <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Item Status</div>
+                    <div>
+                      <nav>
+                        <div><span class="spanDrop">New Open Box</span><span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                         <input id="toggle" type="checkbox">
+                          <ul>
+                            <li><a href="#">New</a></li>
+                            <li><a href="#">New Open Box</a></li>
+                            <li><a href="#">Used</a></li>
+                            <li><a href="#">Working As-Is</a></li>
+                            <li><a href="#">AS-IS</a></li>
+                          </ul>
+                      </nav>
+                    </div>  
+                  </div> <!--Item Status End-->
+                </div> <!-- Drop Down Menus Ends 4-->
+
+                <div class="grid-container-DropDowns"> <!-- Drop Down for Grade Item Status 5-->
+                  <div class="grid-item-DropDowns"> <!--Functional Condition-->
+                    <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Functional Condition</div>
+                    <div>
+                      <nav>
+                        <div><span class="spanDrop">Working As-Is</span> <span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                         <input id="toggle" type="checkbox">
+                          <ul>
+                            <li><a href="#">New Sealed</a></li>
+                            <li><a href="#">New Open Box</a></li>
+                            <li><a href="#">Used</a></li>
+                            <li><a href="#">Working AS-Is</a></li>
+                            <li><a href="#">AS-IS</a></li>
+                          </ul>
+                      </nav>
+                    </div>  
+                  </div> <!--Functional Condition End-->
+                  <div class="grid-item-DropDowns"> <!--Space holder-->
+                  </div> <!--Space holder End-->
+                </div> <!-- Drop Down Menus Ends 5-->
+
+                <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray; margin-top: 25px;">Functional Condition</div>
+                <textarea id="functionalDescription" name="functional" rows="8" cols="50" style="color: ivory;"></textarea>
+
+                <div class="grid-container-DropDowns"> <!-- Drop Down for Grade Item Status 5-->
+                  <div class="grid-item-DropDowns"> <!--Functional Condition-->
+                    <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray;">Physical Condition</div>
+                    <div>
+                      <nav>
+                        <div><span class="spanDrop">Great</span> <span><i class="fa fa-caret-down" style="font-size:20px;color:yellow;"></i></span></div>
+                         <input id="toggle" type="checkbox">
+                          <ul>
+                            <li><a href="#">New/Sealed</a></li>
+                            <li><a href="#">New Open Box</a></li>
+                            <li><a href="#">Great</a></li>
+                            <li><a href="#">Great</a></li>
+                            <li><a href="#">Working AS-Is</a></li>
+                            <li><a href="#">AS-IS</a></li>
+                          </ul>
+                      </nav>
+                    </div>  
+                  </div> <!--Functional Condition End-->
+                  <div class="grid-item-DropDowns"> <!--Space holder-->
+                  </div> <!--Space holder End-->
+                </div> <!-- Drop Down Menus Ends 5-->
+
+                <div style="font-size: 16px; font-weight: bold; font-style:italic; color: gray; margin-top: 25px;">Physical Condition</div>
+                <textarea id="physicalDescription" name="functional" rows="8" cols="50" style="color: ivory;"></textarea>
+
+                
+            </div> <!--Tag Information Specs/Description END-->
+          
+
+            <div class="grid-item">
+              <div style="border: 2px dashed white;">
+                <img class="uploadImg" src="../images/sidebar/upload.png" alt="uploadImg">
+              </div>
+            </div>  
+        
+          </div>
+        </div>
+        
         </div> <!-- main end -->
         
         <!--<a href="index.html" target="popup" onclick="window.open('index.html','jbnWindow','width=600,height=400')">abc</a>-->

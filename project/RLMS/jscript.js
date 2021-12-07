@@ -50,7 +50,7 @@ function loaddata(){
         image.innerText = "image";//to be changed
 
         //Onclick open functions
-        //tag.onclick = function() {TBD(this)};
+        tag.ondblclick = function() {tagSheet(this)};
         name.onclick = function() {TBD(this, info)};
         sku.onclick = function() {TBD(this, info)};
         location.onclick = function() {TBD(this, info)};
@@ -76,7 +76,7 @@ function loaddata(){
         table.appendChild(tableBody);
     }
    });
-
+   
 }
 window.onload = loaddata();
 const tag = new RegExp('^[Tt][0-9]{8}$')
@@ -357,7 +357,7 @@ function runSearchTag(){
                 image.innerText = "image";//to be changed
                 
                 //Onclick open functions
-                //tag.onclick = function() {TBD(this)};
+                tag.ondblclick = function() {tagSheet(this)};
                 name.onclick = function() {TBD(this, info)};
                 sku.onclick = function() {TBD(this, info)};
                 location.onclick = function() {TBD(this, info)};
@@ -463,7 +463,7 @@ function runSearch(){
                         image.innerText = "image";//to be changed
                         
                         //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
+                        tag.ondblclick = function() {tagSheet(this)};
                         name.onclick = function() {TBD(this, info)};
                         sku.onclick = function() {TBD(this, info)};
                         location.onclick = function() {TBD(this, info)};
@@ -523,7 +523,7 @@ function runSearch(){
                         image.innerText = "image";//to be changed
                         
                         //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
+                        tag.ondblclick = function() {tagSheet(this)};
                         name.onclick = function() {TBD(this, info)};
                         sku.onclick = function() {TBD(this, info)};
                         location.onclick = function() {TBD(this, info)};
@@ -583,7 +583,7 @@ function runSearch(){
                         image.innerText = "image";//to be changed
                         
                         //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
+                        tag.ondblclick = function() {tagSheet(this)};
                         name.onclick = function() {TBD(this, info)};
                         sku.onclick = function() {TBD(this, info)};
                         location.onclick = function() {TBD(this, info)};
@@ -643,7 +643,7 @@ function runSearch(){
                         image.innerText = "image";//to be changed
                         
                         //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
+                        tag.ondblclick = function() {tagSheet(this)};
                         name.onclick = function() {TBD(this, info)};
                         sku.onclick = function() {TBD(this, info)};
                         location.onclick = function() {TBD(this, info)};
@@ -703,7 +703,7 @@ function runSearch(){
                         image.innerText = "image";//to be changed
                         
                         //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
+                        tag.ondblclick = function() {tagSheet(this)};
                         name.onclick = function() {TBD(this, info)};
                         sku.onclick = function() {TBD(this, info)};
                         location.onclick = function() {TBD(this, info)};
@@ -763,7 +763,7 @@ function runSearch(){
                         image.innerText = "image";//to be changed
                         
                         //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
+                        tag.ondblclick = function() {tagSheet(this)};
                         name.onclick = function() {TBD(this, info)};
                         sku.onclick = function() {TBD(this, info)};
                         location.onclick = function() {TBD(this, info)};
@@ -823,7 +823,7 @@ function runSearch(){
                         image.innerText = "image";//to be changed
                         
                         //Onclick open functions
-                        //tag.onclick = function() {TBD(this)};
+                        tag.ondblclick = function() {tagSheet(this)};
                         name.onclick = function() {TBD(this, info)};
                         sku.onclick = function() {TBD(this, info)};
                         location.onclick = function() {TBD(this, info)};
@@ -993,21 +993,61 @@ function load_home() {
     document.getElementById("tester").innerHTML='<object type="text/html" data="index.html" ></object>';
 }
 
-function gotoNode(item){
-    //currently 5 
-    for (var i=0; i<5;i++){
+// Loads Data Page
+function gotoDataPage(item){
+    highlightSideMenu(item);
+    document.getElementById("dataPage").style.display = "block";
+    document.getElementById("searchPage").style.display = "none";
+    document.querySelector(".search-container").style.display = "none";
+    document.getElementById("tagSheet").style.display="none";
+}
+
+// Loads Search Page
+function gotoSearchPage(item){
+    highlightSideMenu(item);
+    document.getElementById("searchPage").style.display = "block";
+    document.querySelector(".search-container").style.display = "block";
+    document.getElementById("dataPage").style.display = "none";
+    document.getElementById("tagSheet").display="none";
+}
+
+// Loads Something1 Page
+function gotoSomething1(item){
+    highlightSideMenu(item);
+    document.getElementById("searchPage").style.display = "none";
+    document.querySelector(".search-container").style.display = "none";
+    document.getElementById("dataPage").style.display = "none";
+    document.getElementById("tagSheet").display="none";
+}
+
+//Loads Something2 Page
+function gotoSomething2(item){
+    highlightSideMenu(item);
+    document.getElementById("searchPage").style.display = "none";
+    document.querySelector(".search-container").style.display = "none";
+    document.getElementById("dataPage").style.display = "none";
+    document.getElementById("tagSheet").display="none";
+}
+
+function highlightSideMenu(item){
+    //currently 4 
+    for (var i=0; i<4;i++){
         document.getElementById("sideNav"+i).style.background = "";
-        document.getElementById("sideNav"+i).style.borderRadius = "";
-        document.getElementById("sideNav"+i).style.boxShadow = "";
         document.getElementById("sideNav"+i).parentNode.style.borderLeft = "";
-        document.getElementById("sideNav"+i).parentNode.style.borderRadius = "2%";
     }
     //sideNav that is selected
     item.style.background = "rgba(255, 0, 0, 0.2)";
-    item.style.borderRadius = "0px 55% 55% 0px";
-    item.style.boxShadow = "0px 0px 100px rgba(255,0,0)"; 
     item.parentNode.style.borderLeft = "15px solid rgba(255,0,0)";
-    item.parentNode.style.borderRadius = "2%";
+}
+
+// Load Tag Sheet
+function tagSheet(item){
+    console.log(item);
+    console.log(document.getElementById("searchPage"));
+    console.log(document.getElementById("tagSheet"));
+    document.querySelector(".search-container").style.display = "none";
+    document.getElementById("searchPage").style.display = "none";
+    document.getElementById("tagSheet").style.display = "block";
 }
 
 /*.then((res) => {
