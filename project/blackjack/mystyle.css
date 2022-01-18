@@ -1,0 +1,66 @@
+h2{
+    text-align: center;
+}
+#deck{
+    border: 2px solid black;
+    margin-left: 5px;
+    padding: 25px 0px;
+    width: 60px;
+    height: 80px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+#playerCard{
+    margin: 5px;
+    padding: 25px 0px;
+    width: 60px;
+    height: 80px;
+    text-align: center;
+    display: inline-block;
+}
+
+#dealerCard{
+    
+    margin: 5px;
+    padding: 25px 0px;
+    width: 60px;
+    height: 80px;
+    text-align: center;
+    display: inline-block;
+}
+
+#gameBtns{
+    display:none;
+}
+
+#dealerCardFlip{
+    display: inline-block;
+    border: 2px solid blue;
+    margin: 5px;
+    padding: 25px 0px;
+    width: 60px;
+    height: 80px;
+    text-align: center;
+    background: purple;
+    text-indent: -9999px;
+}
+
+
+#gameResult{
+    margin:40px;
+    text-align: center;
+    font-size: 42px;
+    display: none;
+}
+
+#restartbtn{
+    display: none;
+}
+
+#gameContent{
+    display: none;
+}
+

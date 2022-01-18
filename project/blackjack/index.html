@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script type="text/javascript" src="jscript.js"></script>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>BlackJack</title>
+</head>
+       <h2>Blackjack</h2>
+       
+       <div class="container">
+           <div class="mx-auto text-center">
+            <div class="row">
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" id="startbtn" onclick="startBlackJack()">Start</button>
+                    <button type="button" class="btn btn-primary" id="restartbtn" onclick="restartBlackJack()">Restart</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm">
+                    <div id="gameBtns">
+                        <button type="button" class="btn btn-primary" id="hitbtn" onclick="hitme()">Hit</button>
+                        <button type="button" class="btn btn-primary" id="standbtn" onclick="dealerHit()">Stand</button>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div id="gameContent">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="decktitle">Deck:</div>
+                    <div id="deck"></div>
+                </div>
+            </div>
+            <br>
+
+            <!--Dealer Hand-->
+            <div class="row">
+                <div class="dealertitle">Dealer: <span id="dealerTotal" style="font-weight: bold;"></span></div>
+                <div id="dealer">
+                    <!--<div class="col-sm-1">
+                        <div id="dealerCardFlip"></div>
+                    </div>-->
+                </div>
+            </div>
+
+            <br>
+
+            <!--Player Hand-->
+            <div class="row">
+                <div class="playertitle">Player: <span id="playerTotal" style="font-weight: bold;"></span></div>
+                <div id="player">
+                    <!--<div class="col-sm-1">
+                        <div id="playerCard"></div>
+                    </div>-->
+                </div>
+            </div>
+
+            <!--Result-->
+            <div class="row">
+                <div class="mx-auto text-center">
+                    <div id="gameResult"></div>
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+       </div>
+</body>
+</html>
