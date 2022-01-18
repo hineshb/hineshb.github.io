@@ -294,10 +294,3 @@ function colourCard(){
         }
     }
 }
-
-function checkForA(){
-    for(var i=0; i < playerHand.length; i++){
-        playerHand[i].Weight;
-
-    }
-}
