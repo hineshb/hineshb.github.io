@@ -5,6 +5,7 @@ var playerTotal = 0;
 var dealerTotal = 0;
 var playerHand = new Array();
 var dealerHand = new Array();
+var dealercardholder;
 
 function createDeck()
 {
@@ -78,8 +79,11 @@ function dealHands()
         document.getElementById("dealer").appendChild(divdealer);
         document.getElementById("player").appendChild(divplayer);
     }
+    dealercardholder = document.getElementById("dealer").lastChild.innerHTML;
+    document.getElementById("dealer").lastChild.innerText="don't cheat";
     document.getElementById("dealer").lastChild.id = "dealerCardFlip";
     //document.getElementById("playerTotal").innerHTML = playerTotal;
+    console.log(dealercardholder);
     colourCard();
 }
 
@@ -132,6 +136,7 @@ function checkHand(){
 
 function stand(){
     if(document.getElementById("dealerCardFlip")){
+        document.getElementById("dealerCardFlip").innerHTML = dealercardholder; 
         document.getElementById("dealerCardFlip").id = "dealerCard"; 
     }
     document.getElementById("dealerTotal").innerHTML = dealerTotal;
@@ -183,7 +188,7 @@ function dealerHit(){
     dealerTotal=0;
     for(var i=0; i < dealerHand.length; i++){
         dealerTotal = dealerTotal + dealerHand[i].Weight;
-    }
+    } 
     if(dealerTotal > 21){
         for(var i=0; i < dealerHand.length; i++){
            if(dealerHand[i].Value=="A"){
@@ -198,6 +203,7 @@ function dealerHit(){
     }
     if(dealerTotal < 17){
         dealerPickUp();
+        console.log("check2");
     }
 }
 
@@ -261,6 +267,7 @@ function result(str){
     getPlayerTotal();
     getDealerTotal();
     if(document.getElementById("dealerCardFlip")){
+        document.getElementById("dealerCardFlip").innerHTML = dealercardholder; 
         document.getElementById("dealerCardFlip").id = "dealerCard"; 
     }
     document.getElementById("gameResult").style.display = "block";
@@ -280,17 +287,44 @@ function colourCard(){
     for (var i=0 ; i < length; i++) {
         if(elems[i].innerHTML.includes("♣") || elems[i].innerHTML.includes("♠")){
             elems[i].style.border = "2px solid black";
+            elems[i].style.color = "black";
         }
         if(elems[i].innerHTML.includes("♥") || elems[i].innerHTML.includes("♦")){
             elems[i].style.border = "2px solid red";
+            elems[i].style.color = "red";
         }
     }
     for (var i=0 ; i < length2; i++) {
         if(elems2[i].innerHTML.includes("♣") || elems2[i].innerHTML.includes("♠")){
             elems2[i].style.border = "2px solid black";
+            elems2[i].style.color = "black";
         }
         if(elems2[i].innerHTML.includes("♥") || elems2[i].innerHTML.includes("♦")){
             elems2[i].style.border = "2px solid red";
+            elems2[i].style.color = "red";
         }
+    }
+}
+
+function toggleTheme(str){
+    if(str=="toggleDark"){
+        document.getElementById("toggleDark").innerText = "Switch to Light";
+        document.getElementById("toggleDark").id = "toggleLight";
+        document.getElementById("thisisBody").style.background = "#444444";
+        document.getElementById("blackjack").style.color = "white";
+        document.getElementById("deckTitle").style.color = "white";
+        document.getElementById("dealerTitle").style.color = "white";
+        document.getElementById("playerTitle").style.color = "white";
+        document.getElementById("gameResult").style.color = "white";
+    }
+    if(str=="toggleLight"){
+        document.getElementById("toggleLight").innerText = "Switch to Dark";
+        document.getElementById("toggleLight").id = "toggleDark";
+        document.getElementById("thisisBody").style.background = "white";
+        document.getElementById("blackjack").style.color = "black";
+        document.getElementById("deckTitle").style.color = "black";
+        document.getElementById("dealerTitle").style.color = "black";
+        document.getElementById("playerTitle").style.color = "black";
+        document.getElementById("gameResult").style.color = "black";
     }
 }
