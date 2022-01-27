@@ -1,6 +1,9 @@
-h2{
+
+#blackjack{
     text-align: center;
+    color: black;
 }
+
 #deck{
     border: 2px solid black;
     margin-left: 5px;
@@ -9,8 +12,9 @@ h2{
     height: 80px;
     text-align: center;
     display: inline-block;
+    background: ivory;
+    font-size: 18px;
 }
-
 
 
 #playerCard{
@@ -20,16 +24,19 @@ h2{
     height: 80px;
     text-align: center;
     display: inline-block;
+    background: ivory;
+    font-size: 18px;
 }
 
 #dealerCard{
-    
     margin: 5px;
     padding: 25px 0px;
     width: 60px;
     height: 80px;
     text-align: center;
     display: inline-block;
+    background: ivory;
+    font-size: 18px;
 }
 
 #gameBtns{
@@ -38,9 +45,9 @@ h2{
 
 #dealerCardFlip{
     display: inline-block;
-    border: 2px solid blue;
+    border: 2px solid green;
     margin: 5px;
-    padding: 25px 0px;
+    padding: 28px 0px;
     width: 60px;
     height: 80px;
     text-align: center;
@@ -64,3 +71,45 @@ h2{
     display: none;
 }
 
+#toggleDark{
+    margin: auto 0;
+    padding: 15px 15px;
+    text-align: center;
+    background-color: black;
+    border: 2px solid ivory;
+    color: ivory;
+    font-size: 15px;
+}
+
+#toggleDark:hover{
+    background-color: rgb(27, 27, 27);
+}
+
+#toggleLight{
+    margin: auto 0;
+    padding: 15px 15px;
+    text-align: center;
+    background-color: ivory;
+    border: 2px solid black;
+    color: black;
+    font-size: 15px;
+}
+
+#toggleLight:hover{
+    background-color: rgb(233, 233, 216);
+}
+
+#playerTitle{
+    color:black;
+    font-size: 18px;
+}
+
+#dealerTitle{
+    color:black;
+    font-size: 18px;
+}
+
+#deckTitle{
+    color:black;
+    font-size: 18px;
+}

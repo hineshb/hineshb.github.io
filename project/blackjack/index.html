@@ -12,7 +12,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>BlackJack</title>
 </head>
-       <h2>Blackjack</h2>
+
+<header id="toggleDark" onclick="toggleTheme(this.id)">Switch to Dark</header>
+    <body id="thisisBody">
+       <h2 id="blackjack">BlackJack</h2>
        
        <div class="container">
            <div class="mx-auto text-center">
@@ -37,7 +40,7 @@
             <div id="gameContent">
             <div class="row">
                 <div class="col-sm">
-                    <div class="decktitle">Deck:</div>
+                    <div id="deckTitle">Deck:</div>
                     <div id="deck"></div>
                 </div>
             </div>
@@ -45,7 +48,7 @@
 
             <!--Dealer Hand-->
             <div class="row">
-                <div class="dealertitle">Dealer: <span id="dealerTotal" style="font-weight: bold;"></span></div>
+                <div id="dealerTitle">Dealer: <span id="dealerTotal" style="font-weight: bold;"></span></div>
                 <div id="dealer">
                     <!--<div class="col-sm-1">
                         <div id="dealerCardFlip"></div>
@@ -57,7 +60,7 @@
 
             <!--Player Hand-->
             <div class="row">
-                <div class="playertitle">Player: <span id="playerTotal" style="font-weight: bold;"></span></div>
+                <div id="playerTitle">Player: <span id="playerTotal" style="font-weight: bold;"></span></div>
                 <div id="player">
                     <!--<div class="col-sm-1">
                         <div id="playerCard"></div>
@@ -76,5 +79,5 @@
 
         </div>
        </div>
-</body>
+    </body>
 </html>
