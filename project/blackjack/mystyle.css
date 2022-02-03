@@ -83,7 +83,8 @@
     font-size: 36px;
     display: none;
     border: 2px solid black;
-    color:black
+    color:black;
+    background: white;
 }
 
 #restartbtn{

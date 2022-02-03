@@ -7,7 +7,7 @@ var playerHand = new Array();
 var dealerHand = new Array();
 var dealercardholder;
 var userBet = 0;
-var currentBalance = 100;
+var currentBalance = 500;
 
 window.addEventListener('load', () => {
     const button = document.querySelector('.clear-icon');
@@ -396,28 +396,38 @@ function openBetMenu(){
     }
 }
 
+function checkInputBet(str){
+    //console.log(/^\+?(0|[1-9]\d*)$/.test(str));
+    return /^\+?(0|[1-9]\d*)$/.test(str);
+}
 
 function inputBet(){
     var modal = document.getElementById("myModal");
     var input = document.getElementById("input").value;
-    if(input==""){
-        userBet = 0;
+    document.getElementById("betStatus").innerText = "Insufficient fund!";
+    if(checkInputBet(input)){
+        if(input==""){
+            userBet = 0;
+        }else{
+            userBet = input;
+        }
+        
+        /*if(input<0){
+            console.log("must be higher than 0");
+        }else */
+        if(input>currentBalance){
+            document.getElementById("betStatus").style.display = "block";
+        }else if(document.getElementById("restartbtn").style.display){
+            modal.style.display = "none";
+            document.getElementById("betStatus").style.display = "none";
+            restartBlackJack();
+        }else{
+            modal.style.display = "none";
+            document.getElementById("betStatus").style.display = "none";
+            startBlackJack();
+        }
     }else{
-        userBet = input;
-    }
-    
-    /*if(input<0){
-        console.log("must be higher than 0");
-    }else */
-    if(input>currentBalance){
         document.getElementById("betStatus").style.display = "block";
-    }else if(document.getElementById("restartbtn").style.display){
-        modal.style.display = "none";
-        document.getElementById("betStatus").style.display = "none";
-        restartBlackJack();
-    }else{
-        modal.style.display = "none";
-        document.getElementById("betStatus").style.display = "none";
-        startBlackJack();
+        document.getElementById("betStatus").innerHTML = "*Invalid* <br> Must enter a positive full dollar value!";
     }
 }
