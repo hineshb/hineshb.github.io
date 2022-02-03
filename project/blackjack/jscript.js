@@ -21,6 +21,11 @@ function showBalance(){
     document.getElementById("gameResult").innerHTML = "Your Balance: $" + currentBalance;
 }
 
+function setGameResultDiv(){
+    document.getElementById("gameResult").innerHTML = "You Bet: $" + userBet + '<br>' + "Balance: $" + currentBalance;
+    document.getElementById("gameResult").style.background = "white";
+}
+
 function createDeck()
 {
     deck = new Array();
@@ -65,6 +70,7 @@ function startBlackJack()
     dealHands();
     updateDeck();
     checkHand();
+    setGameResultDiv();
     //document.getElementById('player_' + currentPlayer).classList.add('active');
 }
 
@@ -81,14 +87,12 @@ function dealHands()
         divplayer.id = "playerCard";
         
 
-        divdealer.innerHTML = card1.Value + card1.Suit; //console.log(card1);
-        divplayer.innerHTML = card2.Value + card2.Suit; //console.log(card2);
+        divdealer.innerHTML = card1.Value + card1.Suit; 
+        divplayer.innerHTML = card2.Value + card2.Suit; 
 
         dealerHand.push(card1);
         playerHand.push(card2);
         
-        //dealerTotal = dealerTotal + card1.Weight;
-        //playerTotal = playerTotal + card2.Weight;
        
         document.getElementById("dealer").appendChild(divdealer);
         document.getElementById("player").appendChild(divplayer);
@@ -96,8 +100,7 @@ function dealHands()
     dealercardholder = document.getElementById("dealer").lastChild.innerHTML;
     document.getElementById("dealer").lastChild.innerText="don't cheat";
     document.getElementById("dealer").lastChild.id = "dealerCardFlip";
-    //document.getElementById("playerTotal").innerHTML = playerTotal;
-    console.log(dealercardholder);
+    //console.log(dealercardholder);
     colourCard();
 }
 
@@ -125,10 +128,8 @@ function checkHand(){
     for(var i=0; i < dealerHand.length; i++){
         dealerTotal = dealerTotal + dealerHand[i].Weight;
         if(dealerTotal > 21){
-            console.log("help");
             for(var i=0; i < dealerHand.length; i++){
                if(dealerHand[i].Value=="A"){
-                    console.log("helpx2");
                     dealerTotal = dealerTotal - dealerHand[i].Weight;
                     dealerHand[i].Weight=1;
                     dealerTotal = dealerTotal + dealerHand[i].Weight;
@@ -180,11 +181,9 @@ function stand(){
     }else if(playerTotal>dealerTotal){
         currentBalance = +currentBalance + +userBet;
         result("Player Wins");
-        console.log("ifstatement player");
     }else{
         currentBalance = +currentBalance - +userBet;
         result("Dealer Wins");
-        console.log("ifstatement dealer");
     }
 }
 
@@ -225,7 +224,6 @@ function dealerHit(){
     }
     if(dealerTotal < 17){
         dealerPickUp();
-        console.log("check2");
     }
 }
 
@@ -250,7 +248,7 @@ function toggleRestart(){
     document.getElementById("startbtn").style.display = 'none';
     document.getElementById("restartbtn").style.display = 'inline';
     document.getElementById("gameStartBtn").style.display = 'none';
-    document.getElementById("gameResult").style.display = 'none';
+    //document.getElementById("gameResult").style.display = 'none';
 }
 
 function restartBlackJack(){
@@ -266,7 +264,7 @@ function restartBlackJack(){
     document.getElementById("dealer").innerHTML = "";
     document.getElementById("player").innerHTML = "";
 
-    document.getElementById("gameResult").innerHTML = "";
+    setGameResultDiv();
     
     startBlackJack();
     document.getElementById("hitbtn").disabled = false;
@@ -295,7 +293,7 @@ function result(str){
         document.getElementById("dealerCardFlip").id = "dealerCard"; 
     }
     document.getElementById("gameResult").style.display = "block";
-    document.getElementById("gameResult").innerHTML = str + '<br>' + "You Bet: $" + userBet + '<br>' + "Balance: $" + currentBalance;
+    document.getElementById("gameResult").innerHTML = str + '<br>' + "You Bet: $" + userBet + '<br>' + "New Balance: $" + currentBalance;
     document.getElementById("playerTotal").innerHTML = playerTotal;
     document.getElementById("dealerTotal").innerHTML = dealerTotal;
     document.getElementById("hitbtn").display = true;
@@ -308,7 +306,6 @@ function result(str){
 }
 
 function colourGameResult(){
-    console.log(document.getElementById("gameResult").innerText);
     if(document.getElementById("gameResult").innerText.includes('Dealer')){
         //document.getElementById("gameResult").style.color = "red";
         //document.getElementById("gameResult").style.border = "5px solid red";
@@ -412,9 +409,6 @@ function inputBet(){
             userBet = input;
         }
         
-        /*if(input<0){
-            console.log("must be higher than 0");
-        }else */
         if(input>currentBalance){
             document.getElementById("betStatus").style.display = "block";
         }else if(document.getElementById("restartbtn").style.display){
