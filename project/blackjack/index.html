@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script type="text/javascript" src="betbar.js"></script>
     <script type="text/javascript" src="jscript.js"></script>
+    
     <!--bootstrap-->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -19,23 +22,6 @@
        
        <div class="container">
            <div class="mx-auto text-center">
-            <div class="row">
-                <div class="col-sm">
-                    <button type="button" class="btn btn-primary" id="startbtn" onclick="startBlackJack()">Start</button>
-                    <button type="button" class="btn btn-primary" id="restartbtn" onclick="restartBlackJack()">Restart</button>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-sm">
-                    <div id="gameBtns">
-                        <button type="button" class="btn btn-primary" id="hitbtn" onclick="hitme()">Hit</button>
-                        <button type="button" class="btn btn-primary" id="standbtn" onclick="dealerHit()">Stand</button>
-                    </div>
-                </div>
-            </div>
-
-            <br><br>
 
             <div id="gameContent">
             <div class="row">
@@ -67,6 +53,20 @@
                     </div>-->
                 </div>
             </div>
+            </div> <!-- game content end-->
+
+            <div class="row">
+                <div class="col-sm">
+                    <span id="gameStartBtn">
+                        <button type="button" class="btn btn-primary" id="startbtn" onclick="openBetMenu()">Play</button> 
+                        <button type="button" class="btn btn-primary" id="restartbtn" onclick="openBetMenu()">Restart</button>          
+                    </span>
+                    <span id="gameBtns">                
+                        <button type="button" class="btn btn-primary" id="standbtn" onclick="dealerHit()">Stand</button>
+                        <button type="button" class="btn btn-primary" id="hitbtn" onclick="hitme()">Hit</button>
+                    </span>
+                </div>
+            </div>
 
             <!--Result-->
             <div class="row">
@@ -74,10 +74,37 @@
                     <div id="gameResult"></div>
                 </div>
             </div>
+
+        </div><!--main class="mx-auto text-center"-->
+       </div> 
+
+       <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 style="text-align: center;">Place Your Bet!</h2>
+          <p id="betBalance"></p>
+            <div class="betinput-container" style="display:block;">
+                <div class="wrapper">
+                    <div class="betinput-icon">$</div>
+                    <input placeholder="$0 to play free"
+                        type="number" 
+                        inputmode="numeric"
+                        class="betinput"
+                        id="input"
+                        min="0"
+                        step="1"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                        title="Numbers only">
+                    <img class="clear-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
+                </div>
             </div>
-
-
+            <p id="betStatus">Insufficient fund!</p>
+            <div class="betMenuStart"><button type="button" class="btn btn-primary" id="startbtn" onclick="inputBet()">Start</button></div>
         </div>
-       </div>
+      
+      </div>
+
     </body>
 </html>

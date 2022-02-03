@@ -6,6 +6,20 @@ var dealerTotal = 0;
 var playerHand = new Array();
 var dealerHand = new Array();
 var dealercardholder;
+var userBet = 0;
+var currentBalance = 100;
+
+window.addEventListener('load', () => {
+    const button = document.querySelector('.clear-icon');
+    button.addEventListener('click', () => {
+        document.querySelector('.betinput').value = "";
+    });
+});
+
+function showBalance(){
+    document.getElementById("gameResult").style.display = "block";
+    document.getElementById("gameResult").innerHTML = "Your Balance: $" + currentBalance;
+}
 
 function createDeck()
 {
@@ -127,9 +141,11 @@ function checkHand(){
     document.getElementById("dealerTotal").innerHTML = dealerHand[0].Weight + " + Unknown";
 
     if(playerTotal>21){
+        currentBalance = +currentBalance - +userBet;
         result("Dealer Wins");
     }
     if(dealerTotal>21){
+        currentBalance = +currentBalance + +userBet;
         result("Player Wins");
     }     
 }
@@ -146,21 +162,27 @@ function stand(){
     }else if (dealerTotal == playerTotal){
         result("Draw");
     }else if(playerTotal == 21){
+        currentBalance = +currentBalance + +userBet;
         result("Player Wins");
 
     }else if(dealerTotal == 21){
+        currentBalance = +currentBalance - +userBet;
         result("Dealer Wins");
 
     }else if(playerTotal > 21){
+        currentBalance = +currentBalance - +userBet;
         result("Dealer Wins");
 
-    }else if(dealerTotal > 21){
+    }else if(dealerTotal > 21){        
+        currentBalance = +currentBalance + +userBet;
         result("Player Wins");
 
     }else if(playerTotal>dealerTotal){
+        currentBalance = +currentBalance + +userBet;
         result("Player Wins");
         console.log("ifstatement player");
     }else{
+        currentBalance = +currentBalance - +userBet;
         result("Dealer Wins");
         console.log("ifstatement dealer");
     }
@@ -227,6 +249,8 @@ function dealerPickUp(){
 function toggleRestart(){
     document.getElementById("startbtn").style.display = 'none';
     document.getElementById("restartbtn").style.display = 'inline';
+    document.getElementById("gameStartBtn").style.display = 'none';
+    document.getElementById("gameResult").style.display = 'none';
 }
 
 function restartBlackJack(){
@@ -271,12 +295,32 @@ function result(str){
         document.getElementById("dealerCardFlip").id = "dealerCard"; 
     }
     document.getElementById("gameResult").style.display = "block";
-    document.getElementById("gameResult").innerHTML = str;
+    document.getElementById("gameResult").innerHTML = str + '<br>' + "You Bet: $" + userBet + '<br>' + "Balance: $" + currentBalance;
     document.getElementById("playerTotal").innerHTML = playerTotal;
     document.getElementById("dealerTotal").innerHTML = dealerTotal;
-    document.getElementById("hitbtn").disabled = true;
+    document.getElementById("hitbtn").display = true;
     document.getElementById("standbtn").disabled = true;
+    document.getElementById("gameBtns").style.display = "none";
+    document.getElementById("gameStartBtn").style.display = 'inline';
+    document.getElementById("gameResult").style.display = 'block';
     colourCard();
+    colourGameResult();
+}
+
+function colourGameResult(){
+    console.log(document.getElementById("gameResult").innerText);
+    if(document.getElementById("gameResult").innerText.includes('Dealer')){
+        //document.getElementById("gameResult").style.color = "red";
+        //document.getElementById("gameResult").style.border = "5px solid red";
+        document.getElementById("gameResult").style.background = "red";
+    }else if(document.getElementById("gameResult").innerText.includes('Player')){
+        //document.getElementById("gameResult").style.color = "green";
+        //document.getElementById("gameResult").style.border = "5px solid green";
+        document.getElementById("gameResult").style.background = "green";
+    }else{
+        document.getElementById("gameResult").style.border = "5px solid black";
+        document.getElementById("gameResult").style.background = "white";
+    }
 }
 
 function colourCard(){
@@ -315,7 +359,7 @@ function toggleTheme(str){
         document.getElementById("deckTitle").style.color = "white";
         document.getElementById("dealerTitle").style.color = "white";
         document.getElementById("playerTitle").style.color = "white";
-        document.getElementById("gameResult").style.color = "white";
+        //document.getElementById("gameResult").style.color = "white";
     }
     if(str=="toggleLight"){
         document.getElementById("toggleLight").innerText = "Switch to Dark";
@@ -325,6 +369,55 @@ function toggleTheme(str){
         document.getElementById("deckTitle").style.color = "black";
         document.getElementById("dealerTitle").style.color = "black";
         document.getElementById("playerTitle").style.color = "black";
-        document.getElementById("gameResult").style.color = "black";
+        //document.getElementById("gameResult").style.color = "black";
+    }
+}
+
+function openBetMenu(){
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    document.getElementById("betBalance").innerText = "Balance: $" + currentBalance;
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+}
+
+
+function inputBet(){
+    var modal = document.getElementById("myModal");
+    var input = document.getElementById("input").value;
+    if(input==""){
+        userBet = 0;
+    }else{
+        userBet = input;
+    }
+    
+    /*if(input<0){
+        console.log("must be higher than 0");
+    }else */
+    if(input>currentBalance){
+        document.getElementById("betStatus").style.display = "block";
+    }else if(document.getElementById("restartbtn").style.display){
+        modal.style.display = "none";
+        document.getElementById("betStatus").style.display = "none";
+        restartBlackJack();
+    }else{
+        modal.style.display = "none";
+        document.getElementById("betStatus").style.display = "none";
+        startBlackJack();
     }
 }
