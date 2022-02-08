@@ -307,12 +307,8 @@ function result(str){
 
 function colourGameResult(){
     if(document.getElementById("gameResult").innerText.includes('Dealer')){
-        //document.getElementById("gameResult").style.color = "red";
-        //document.getElementById("gameResult").style.border = "5px solid red";
         document.getElementById("gameResult").style.background = "red";
     }else if(document.getElementById("gameResult").innerText.includes('Player')){
-        //document.getElementById("gameResult").style.color = "green";
-        //document.getElementById("gameResult").style.border = "5px solid green";
         document.getElementById("gameResult").style.background = "green";
     }else{
         document.getElementById("gameResult").style.border = "5px solid black";
@@ -356,6 +352,10 @@ function toggleTheme(str){
         document.getElementById("deckTitle").style.color = "white";
         document.getElementById("dealerTitle").style.color = "white";
         document.getElementById("playerTitle").style.color = "white";
+        document.getElementsByClassName('modal-box')[0].style.backgroundColor="#1C1C1C";
+        document.getElementsByClassName('modal-box')[0].style.color="#fff";
+        document.getElementsByClassName('betinput')[0].style.color="#fff";
+        document.getElementsByClassName('close')[0].style.color="#fff";
         //document.getElementById("gameResult").style.color = "white";
     }
     if(str=="toggleLight"){
@@ -366,6 +366,10 @@ function toggleTheme(str){
         document.getElementById("deckTitle").style.color = "black";
         document.getElementById("dealerTitle").style.color = "black";
         document.getElementById("playerTitle").style.color = "black";
+        document.getElementsByClassName('modal-box')[0].style.backgroundColor="#fefefe";
+        document.getElementsByClassName('modal-box')[0].style.color="#000";
+        document.getElementsByClassName('betinput')[0].style.color="#000";
+        document.getElementsByClassName('close')[0].style.color="#000";
         //document.getElementById("gameResult").style.color = "black";
     }
 }
@@ -383,6 +387,10 @@ function openBetMenu(){
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
+        document.getElementById("betStatus").innerHTML="";
+        document.getElementsByClassName('betinput')[0].value="";
+        document.querySelector(".clear-icon").style.visibility = "hidden";
+        document.querySelector(".betinput-icon").style.visibility = "hidden";
     }
 
     // When the user clicks anywhere outside of the modal, close it
